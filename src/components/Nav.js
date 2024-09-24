@@ -1,4 +1,4 @@
-import { logo } from './images/logo';
+import logo from './images/nav-logo';
 function Nav() {
     return (
 
