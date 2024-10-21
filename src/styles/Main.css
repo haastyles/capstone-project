@@ -1,0 +1,63 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.flex div {
+    display: "block";
+    width: 50%;
+}
+
+h1 {
+    display: "inline-block";
+    font-size: 4vw;
+    padding: 5px;
+    margin: 10px;
+}
+
+h2 {
+    display: "inline-block";
+    font-size: 3vw;
+    padding: 5px;
+    margin: 10px;
+}
+
+.title-card {
+    height: 8vw;
+}
+
+.title-card h2 {
+    float: left;
+}
+
+.flex div h3 {
+    font-size: 2vw;
+    padding: 5px;
+    margin: 10px;
+}
+
+.flex .info p {
+    font-size: 1vw;
+    padding: 5px;
+    margin: 10px;
+}
+
+.image img {
+    display: block;
+    position: relative;
+    float: right;
+    width: 50%;
+    padding: 5px;
+    margin: 10px;
+}
+
+button {
+    padding: 5px;
+    margin: 10px;
+    font-size: 1vw;
+    display: inline-block;
+}

@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+label {
+    padding: 5px;
+    margin: 10px;
+}

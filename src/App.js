@@ -1,18 +1,37 @@
-import './App.css';
+import './styles/App.css';
 import Header from './components/Header.js';
 import Main from './components/Main.js';
 import Footer from './components/Footer.js';
+import ReserveTable from './components/ReserveTable.js';
 import logo from './images/nav-logo.svg';
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
+
+    const home =
+        <>
+            <Header />
+            <Main />
+            <Footer />
+        </>
+
+    const reserve =
+        <>
+            <Header />
+            <ReserveTable />
+            <Footer />
+        </>
+
   return (
       <>
           <meta name="description" content="Little Lemon is a family-owned restaurant that prides itself in serving fresh and unique Mediterranean cuisine within the Chicago area."/>
           <meta name="og:title" content="Little Lemon Restaurant"/>
           <meta name="og:description" content="Little Lemon is a family-owned restaurant that prides itself in serving fresh and unique Mediterranean cuisine within the Chicago area."/>
           <meta name="og:image" content={logo} />
-          <Header></Header>
-          <Main></Main>
-          <Footer></Footer>
+          <Routes>
+                  <Route index element={home} />
+                  <Route path="/reserve-a-table" element={reserve}/>
+          </Routes>
       </>
   );
 }

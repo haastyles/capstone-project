@@ -1,11 +1,13 @@
+import Nav from './Nav.js';
+
+
 function Header() {
+
     return (
-        <>
-            <header>
-                <nav>
-                </nav>
-            </header>
-        </>
+        <header>
+            <Nav>
+            </Nav>
+        </header>
     );
 }
 
