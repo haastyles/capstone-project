@@ -1,3 +1,8 @@
+.form-container {
+    padding: 5px;
+    margin: 10px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -5,7 +10,55 @@ form {
     width: 100%;
 }
 
-label {
+div.flex-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+div.form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+    width: 35%;
+    font-size: 1.75vw;
+}
+
+.input {
+    display: block;
+    padding: 5px 0px 5px 0px;
+    margin: 10px 0px 10px 0px;
+    font-size: 2vw;
+}
+
+.input.minute {
+    display: block;
+    padding: 5px 5px 5px 5px;
+    margin: 10px 10px 10px 10px;
+    width: 30%;
+}
+
+.selected {
+    background-color: deeppink;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+span {
+    color: red;
+    font-size: 1.5vw;
+}
+
+input.submit {
     padding: 5px;
     margin: 10px;
 }
+
+
+
