@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue LT Std';
 }
 
 .nav-container {
@@ -85,7 +84,7 @@ ul li a.active::after {
         top: 60px;
         background-color: #EDEFEE;
         width: 0px;
-        height: calc(100vh - 60px);
+        height: calc(100vh + 200px);
         transition: all 0.3s ease-in;
         overflow: hidden;
         z-index: 100;

@@ -81,24 +81,24 @@ function Main() {
     return (
         <>
             <main>
-                <div className="flex flex-hero">
-                    <div className="info info-hero">
+                <div className="flex hero">
+                    <div className="info hero">
                         <h1>Little Lemon</h1>
                         <h3>Chicago</h3>
                         <p>{descriptions[0].description}</p>
                         <button><Link to="reserve-a-table">Reserve a Table</Link></button>
                     </div>
-                    <div className="image img-hero">
-                        <img src={restaurant} alt="Restaurant patio"></img>
+                    <div className="image hero">
+                        <img className="image hero img-details" src={restaurant} alt="Restaurant patio"></img>
                     </div>
 
                 </div>
-                <div className="bg-specials" style={{ display: "block", backgroundColor:"#454545"} }>
+                <div className="bg-specials specials" style={{ display: "block"}}>
                     <div className="title-card specials">
                         <h2>Specials</h2>
                         <button style={{ float: "right" }}>Online Menu</button>
                     </div>
-                    <div className="flex flex-specials">
+                    <div className="flex specials">
                         {dishes.map((dish) => (
                             <Card
                                 key={dish.title}
@@ -111,7 +111,7 @@ function Main() {
                         ))}
                     </div>
                 </div>
-                <div className="bg-testimonials" style={{ backgroundColor: "#848585" }}>
+                <div className="bg-testimonials testimonials">
                     <div className="title-card testimonials">
                         <h2>Testimonials</h2>
                     </div>
@@ -130,14 +130,14 @@ function Main() {
                     </div>
                 </div>
                 <div>
-                    <div className="flex flex-about">
-                        <div className="info info-about">
+                    <div className="flex about">
+                        <div className="info about">
                             <h2>Little Lemon</h2>
                             <h3>Chicago</h3>
                             <p>{descriptions[1].description}</p>
                         </div>
-                        <div className="image img-about">
-                            <img src={owners} alt="Two chefs in the kitchen"></img>
+                        <div className="image about">
+                            <img className="image about img-details" src={owners} alt="Two chefs in the kitchen"></img>
                         </div>
                     </div>
                 </div>

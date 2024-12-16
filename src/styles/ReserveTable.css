@@ -31,17 +31,21 @@ div.form {
     padding: 5px 0px 5px 0px;
     margin: 10px 0px 10px 0px;
     font-size: 2vw;
+    border-radius: 4px;
+    border-width: 2px;
 }
 
-.input.minute {
+.minute, .submit {
     display: block;
-    padding: 5px 5px 5px 5px;
-    margin: 10px 10px 10px 10px;
-    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.5vw;
+    border-radius: 16px;
+    border-width: 1px;
 }
 
 .selected {
-    background-color: deeppink;
+    background-color: #F4CE14;
 }
 
 .row {
@@ -51,8 +55,9 @@ div.form {
 }
 
 span {
-    color: red;
+    color: #EE9972;
     font-size: 1.5vw;
+    font-style: italic;
 }
 
 input.submit {

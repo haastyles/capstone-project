@@ -3,7 +3,23 @@ import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import useSubmit from '../hooks/useSubmit';
+//TO DO: Incorporate minute value into time value submissiom.
 function ReserveTable(props) {
+
+    const times = [
+        { value: 11, display: "11:00 AM"},
+        { value: 12, display: "12:00 PM" },
+        { value: 13, display: "1:00 PM" },
+        { value: 14, display: "2:00 PM" },
+        { value: 15, display: "3:00 PM" },
+        { value: 16, display: "4:00 PM" },
+        { value: 17, display: "5:00 PM" },
+        { value: 18, display: "6:00 PM" },
+        { value: 19, display: "7:00 PM" },
+        { value: 20, display: "8:00 PM" },
+        { value: 21, display: "9:00 PM" },
+        { value: 22, display: "10:00 PM" }
+    ];
 
     const tomorrow = new Date();
     const maxDate = new Date();
@@ -16,13 +32,11 @@ function ReserveTable(props) {
         const date = inputDate.getDate();
         return `${month}/${date}/${year}`;
     }
-
     const [hour, setHour] = useState(19);
     const [americanHour, setAmericanHour] = useState(7);
     const [midday, setMidday] = useState("PM");
-    const [minute, setMinute] = useState(0);
+    const [minute, setMinute] = useState(0.5);
     const [zeroSelected, setZeroSelected] = useState(true);
-    const [thirtySelected, setThirtySelected] = useState(false);
 
     const { isLoading, response, submit } = useSubmit();
     
@@ -48,6 +62,25 @@ function ReserveTable(props) {
             .required("Required"),
     });
 
+    const dropdownChange = (e) => {
+        setHour(e.target.value);
+        if (e.target.value == 11) {
+            setAmericanHour(e.target.value);
+            setMidday("AM");
+        } else if (e.target.value == 12) {
+            setAmericanHour(e.target.value);
+            setMidday("PM");
+        } else {
+            setMidday("PM");
+            setAmericanHour(e.target.value - 12);
+        }
+    }
+
+    const toggleChange = (e) => {
+        zeroSelected ? setMinute(0) : setMinute(0.5);
+        zeroSelected ? setZeroSelected(false) : setZeroSelected(true);
+    }
+    
     const handleSubmit = (values, { resetForm }) => {
         submit([], values)
             .then(console.log(isLoading))
@@ -56,7 +89,7 @@ function ReserveTable(props) {
             .then(() => { if (response.type === 'success') { console.log('Form submitted:', values); resetForm({ values: '' }); } })
             .then(alert(response.message))
             .catch((error) => { console.log(error); })
-    }
+    };
         
     return (
         <>
@@ -67,7 +100,8 @@ function ReserveTable(props) {
                         initialValues={
                             {
                                 date: '',
-                                time: 19,
+                                hour: 19,
+                                minute: 0,
                                 size: 2,
                                 firstName: '',
                                 lastName: '',
@@ -77,7 +111,7 @@ function ReserveTable(props) {
                         }
                         onSubmit={handleSubmit}
                         validationSchema={validation}>
-                        {({errors, touched}) => (
+                        {({ errors, touched, setFieldValue }) => (
                             <Form className="form reserve-table">
                                 <h2>Let us help you select a day</h2>
                                 <div className="flex-form date">
@@ -94,36 +128,16 @@ function ReserveTable(props) {
                                         <label>Choose your time
                                             <span className="required-icon">*</span>
                                         </label>
-                                        <Field className="input time" name="time" component="select" value={hour}
-                                            onChange={e => {
-                                                setHour(e.target.value);
-                                                if (e.target.value == 11) {
-                                                    setAmericanHour(e.target.value);
-                                                    setMidday("AM");
-                                                } else if (e.target.value == 12) {
-                                                    setAmericanHour(e.target.value);
-                                                    setMidday("PM");
-                                                } else {
-                                                    setMidday("PM");
-                                                    setAmericanHour(e.target.value - 12);
-                                                }
-                                            }}>
-                                            <option value={11}>11:00 AM</option>
-                                            <option value={12}>12:00 PM</option>
-                                            <option value={13}>1:00 PM</option>
-                                            <option value={14}>2:00 PM</option>
-                                            <option value={15}>3:00 PM</option>
-                                            <option value={16}>4:00 PM</option>
-                                            <option value={17}>5:00 PM</option>
-                                            <option value={18}>6:00 PM</option>
-                                            <option value={19}>7:00 PM</option>
-                                            <option value={20}>8:00 PM</option>
-                                            <option value={21}>9:00 PM</option>
-                                            <option value={22}>10:00 PM</option>
+                                        <Field className="input hour" name="hour" component="select" value={hour} onChangeCapture={dropdownChange}>
+                                            {times.map((time) => (
+                                                <option key={time.value} value={time.value}>{time.display}</option>
+
+                                            ))}
                                         </Field>
                                         <div className="row minute">
-                                            <Field className={`input minute zero ${zeroSelected ? "selected" : ""}`} name="minute" type="button" value={americanHour + ":00" + midday} onClick={() => {setZeroSelected(!zeroSelected); setThirtySelected(!thirtySelected);}} />
-                                            <Field className={`input minute thirty ${thirtySelected ? "selected" : ""}`} name="minute" type="button" value={americanHour + ":30" + midday} onClick={() => { setZeroSelected(!zeroSelected); setThirtySelected(!thirtySelected); }} />
+                                            <Field className="input minute" name="minute" type="button" style={{ display: "none" }} />
+                                            <button className={`minute zero ${zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":00" + midday}</button>
+                                            <button className={`minute thirty ${!zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":30" + midday}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -149,14 +163,14 @@ function ReserveTable(props) {
                                         <label>First name
                                             <span className="required-icon">*</span>
                                         </label>
-                                        <Field className="input firstName" name="firstName" placeholder="First name"/>
+                                        <Field className="input firstName" name="firstName" type="text" placeholder="First name"/>
                                         {errors.firstName && touched.firstName ? (
                                             <span className="error-message">{errors.firstName}</span>
                                         ) : null}
                                     </div>
                                     <div className="form lastName">
                                         <label>Last name</label>
-                                        <Field className="input lastName" name="lastName" placeholder="Last name"/>
+                                        <Field className="input lastName" name="lastName" type="text" placeholder="Last name"/>
                                         {errors.lastName && touched.lastName ? (
                                             <span className="error-message">{errors.lastName}</span>
                                         ) : null}
