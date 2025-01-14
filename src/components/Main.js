@@ -3,6 +3,8 @@ import restaurant from '../images/restaurant.jpg';
 import owners from '../images/Mario and Adrian A.jpg';
 import '../styles/Main.css';
 import { Link } from 'react-router-dom';
+import ratings from "../data/MainRatings.json";
+import descriptions from "../data/MainDescriptions.json";
 
 const dishes = [
     {
@@ -26,56 +28,7 @@ const dishes = [
         desc: 'An airy cake with a hint of zest.',
         altDesc: 'Plate of lemon cake'
     }
-]
-
-const ratings = [
-    {
-        title: 'Lucas',
-        subTitle: '5 stars',
-        getImgSrc: () => require("../images/thumbs-up.png"),
-        desc: 'This was one of the best meals of my life.',
-        altDesc: 'Icon of a hand giving a thumbs up'
-    },
-    {
-        title: 'Kevin',
-        subTitle: '5 stars',
-        getImgSrc: () => require("../images/thumbs-up.png"),
-        desc: 'I will definitely be back for more spinach artichoke dip.',
-        altDesc: 'Icon of a hand giving a thumbs up'
-    },
-    {
-        title: 'Teresa',
-        subTitle: '5 stars',
-        getImgSrc: () => require("../images/thumbs-up.png"),
-        desc: 'The BEST restaurant for a girls night out.',
-        altDesc: 'Icon of a hand giving a thumbs up'
-    },
-    {
-        title: 'Brett',
-        subTitle: '5 stars',
-        getImgSrc: () => require("../images/thumbs-up.png"),
-        desc: `I love ordering their meat lover's pizza.`,
-        altDesc: 'Icon of a hand giving a thumbs up'
-    }
-]
-
-const descriptions = [
-    {
-        id: 'hero',
-        description: 'Little Lemon is a mediteranean-inspired restaurant dedicated ' +
-            'to bringing homestyle cooking to the dining table. A family-owned restaurant, ' +
-            'they work to elevate the dining experience of all clientle, new and returning. ' +
-            'Feel free to reserve a table or check out the seasonally revolving menu below.'
-    },
-    {
-        id: 'about',
-        description: 'Adrian and Mario are two brothers who grew up always in the kitchen. ' +
-            'From the time they were young, the brothers have been experimenting with various ' +
-            'mediterranean flavors. Since co-founding Little Lemon, they have been on a mission to ' +
-            'make every meal feel celebratory.'
-    }
-]
-
+];
 function Main() {
 
     return (
@@ -121,9 +74,7 @@ function Main() {
                                     key={rate.title}
                                     title={rate.title}
                                     subTitle={rate.subTitle}
-                                    desc={rate.desc}
-                                    imgSrc={rate.getImgSrc()}
-                                    altDesc={rate.altDesc}
+                                    desc={rate.desc}                                    
                                     style={{display: "block"}}
                                 />
                             ))}

@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\ReserveTable.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\ReserveTable.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Footer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Footer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\FormModal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\FormModal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Card.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Card.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\ReserveTable.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\ReserveTable.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\ReserveTable.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles\\ReserveTable.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Nav.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Nav.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\App.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\hooks\\useSubmit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hooks\\useSubmit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles\\Main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Nav.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -43,8 +35,40 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles\\Footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\App.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:App.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Footer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Footer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\hooks\\useSubmit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hooks\\useSubmit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Header.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Header.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Nav.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\Nav.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\FooterMenu.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data\\FooterMenu.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainDescriptions.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data\\MainDescriptions.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainRatings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data\\MainRatings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainDishes.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data\\MainDishes.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles\\Main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -60,12 +84,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 287,
+          "DockedWidth": 248,
           "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "App.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\App.js",
               "RelativeDocumentMoniker": "App.js",
@@ -74,30 +98,32 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-09-24T13:01:09.507Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Footer.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Footer.js",
               "RelativeDocumentMoniker": "components\\Footer.js",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Footer.js",
               "RelativeToolTip": "components\\Footer.js",
-              "ViewState": "AQIAACYAAAAAAAAAAAAAwC0AAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-09-24T14:06:47.193Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Main.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Main.js",
               "RelativeDocumentMoniker": "components\\Main.js",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Main.js",
               "RelativeToolTip": "components\\Main.js",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAAAFwAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-09-24T13:36:37.154Z",
               "IsPinned": true,
@@ -118,55 +144,130 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FormModal.js",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\FormModal.js",
+              "RelativeDocumentMoniker": "components\\FormModal.js",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\FormModal.js",
+              "RelativeToolTip": "components\\FormModal.js",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-13T03:47:56.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ReserveTable.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\ReserveTable.js",
               "RelativeDocumentMoniker": "components\\ReserveTable.js",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\ReserveTable.js",
               "RelativeToolTip": "components\\ReserveTable.js",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAwFIAAAAEAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAjwF4AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-10-21T01:20:55.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "useSubmit.js",
-              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\hooks\\useSubmit.js",
-              "RelativeDocumentMoniker": "hooks\\useSubmit.js",
-              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\hooks\\useSubmit.js",
-              "RelativeToolTip": "hooks\\useSubmit.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-27T19:49:19.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Card.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Card.js",
               "RelativeDocumentMoniker": "components\\Card.js",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Card.js",
               "RelativeToolTip": "components\\Card.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-09T02:23:11.081Z"
+              "WhenOpened": "2024-10-09T02:23:11.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "useSubmit.js",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\hooks\\useSubmit.js",
+              "RelativeDocumentMoniker": "hooks\\useSubmit.js",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\hooks\\useSubmit.js",
+              "RelativeToolTip": "hooks\\useSubmit.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-27T19:49:19.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Nav.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Nav.js",
               "RelativeDocumentMoniker": "components\\Nav.js",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Nav.js",
               "RelativeToolTip": "components\\Nav.js",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAAwAMAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-21T02:49:11.352Z"
+              "WhenOpened": "2025-01-13T03:41:06.32Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
+              "Title": "Header.js",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Header.js",
+              "RelativeDocumentMoniker": "components\\Header.js",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\components\\Header.js",
+              "RelativeToolTip": "components\\Header.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-13T03:40:45.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FooterMenu.json",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\FooterMenu.json",
+              "RelativeDocumentMoniker": "data\\FooterMenu.json",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\FooterMenu.json",
+              "RelativeToolTip": "data\\FooterMenu.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-17T13:33:40.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainDescriptions.json",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainDescriptions.json",
+              "RelativeDocumentMoniker": "data\\MainDescriptions.json",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainDescriptions.json",
+              "RelativeToolTip": "data\\MainDescriptions.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-17T04:15:18.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainRatings.json",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainRatings.json",
+              "RelativeDocumentMoniker": "data\\MainRatings.json",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainRatings.json",
+              "RelativeToolTip": "data\\MainRatings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-17T04:13:35.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainDishes.json",
+              "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainDishes.json",
+              "RelativeDocumentMoniker": "data\\MainDishes.json",
+              "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\data\\MainDishes.json",
+              "RelativeToolTip": "data\\MainDishes.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-17T04:03:41.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "index.js",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\index.js",
               "RelativeDocumentMoniker": "index.js",
@@ -178,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\package.json",
               "RelativeDocumentMoniker": "..\\package.json",
@@ -191,49 +292,50 @@
           ]
         },
         {
-          "DockedWidth": 113,
+          "DockedWidth": 152,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ReserveTable.css",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\ReserveTable.css",
               "RelativeDocumentMoniker": "styles\\ReserveTable.css",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\ReserveTable.css",
               "RelativeToolTip": "styles\\ReserveTable.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAQwDsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-21T02:56:31.153Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "Main.css",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Main.css",
               "RelativeDocumentMoniker": "styles\\Main.css",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Main.css",
               "RelativeToolTip": "styles\\Main.css",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAE4AAAASAAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAFgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-09T01:35:14.588Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Nav.css",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Nav.css",
               "RelativeDocumentMoniker": "styles\\Nav.css",
               "ToolTip": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Nav.css",
               "RelativeToolTip": "styles\\Nav.css",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAEEAAAAQAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-08T02:01:32.828Z"
+              "WhenOpened": "2024-10-08T02:01:32.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Footer.css",
               "DocumentMoniker": "C:\\Users\\FHAAS\\source\\repos\\capstone-project\\src\\styles\\Footer.css",
               "RelativeDocumentMoniker": "styles\\Footer.css",
@@ -241,7 +343,8 @@
               "RelativeToolTip": "styles\\Footer.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-15T02:42:33.978Z"
+              "WhenOpened": "2024-10-15T02:42:33.978Z",
+              "EditorCaption": ""
             }
           ]
         }

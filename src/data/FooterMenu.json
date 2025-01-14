@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0",
+    "title": "home"
+  },
+  {
+    "id": "1",
+    "title": "about"
+  },
+  {
+    "id": "2",
+    "title": "menu"
+  },
+  {
+    "id": "3",
+    "title": "reservations"
+  },
+  {
+    "id": "4",
+    "title": "order online"
+  },
+  {
+    "id": "5",
+    "title": "login"
+  }
+]

@@ -1,26 +1,13 @@
 import '../styles/ReserveTable.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import FormModal from './FormModal.js';
 import useSubmit from '../hooks/useSubmit';
-//TO DO: Incorporate minute value into time value submissiom.
+import times from "../data/ReserveTableTimes.json";
+import parties from "../data/ReserveTableParties.json";
 function ReserveTable(props) {
-
-    const times = [
-        { value: 11, display: "11:00 AM"},
-        { value: 12, display: "12:00 PM" },
-        { value: 13, display: "1:00 PM" },
-        { value: 14, display: "2:00 PM" },
-        { value: 15, display: "3:00 PM" },
-        { value: 16, display: "4:00 PM" },
-        { value: 17, display: "5:00 PM" },
-        { value: 18, display: "6:00 PM" },
-        { value: 19, display: "7:00 PM" },
-        { value: 20, display: "8:00 PM" },
-        { value: 21, display: "9:00 PM" },
-        { value: 22, display: "10:00 PM" }
-    ];
-
+    
     const tomorrow = new Date();
     const maxDate = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -32,6 +19,7 @@ function ReserveTable(props) {
         const date = inputDate.getDate();
         return `${month}/${date}/${year}`;
     }
+
     const [hour, setHour] = useState(19);
     const [americanHour, setAmericanHour] = useState(7);
     const [midday, setMidday] = useState("PM");
@@ -40,8 +28,8 @@ function ReserveTable(props) {
 
     const { isLoading, response, submit } = useSubmit();
     
-    const phoneRegex = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
     const nameRegex = /^[A-Za-z]*$/;
+    const phoneDigits = /[^0-9]+/g;
    
     const validation = Yup.object().shape({
         date: Yup.date()
@@ -56,10 +44,7 @@ function ReserveTable(props) {
         email: Yup.string()
             .email("Must be a valid email"),
         phone: Yup.string()
-            .matches(phoneRegex, "Not a valid phone number")
-            .min(10, "Too short")
-            .max(10, "Too long")
-            .required("Required"),
+            .required("Required")
     });
 
     const dropdownChange = (e) => {
@@ -80,14 +65,34 @@ function ReserveTable(props) {
         zeroSelected ? setMinute(0) : setMinute(0.5);
         zeroSelected ? setZeroSelected(false) : setZeroSelected(true);
     }
-    
+
+    const formatPhone = (e) => {
+        const userInput = e.target.value.replaceAll(phoneDigits, "");
+        const first = userInput.slice(0, 3);
+        const second = userInput.slice(3, 6);
+        const third = userInput.slice(6, 10);
+        let formatted = "";
+
+        if (third.length > 0) {
+            formatted = "(" + first + ") " + second + "-" + third;
+        } else if (second.length > 0) {
+            formatted = "(" + first + ") " + second;
+        } else if (first.length > 0) {
+            formatted = "(" + first;
+        }
+ 
+        return formatted;
+    }
+
     const handleSubmit = (values, { resetForm }) => {
         submit([], values)
             .then(console.log(isLoading))
             .then(console.log(response))
             .then(console.log(response.type === 'success'))
             .then(() => { if (response.type === 'success') { console.log('Form submitted:', values); resetForm({ values: '' }); } })
-            .then(alert(response.message))
+            .then(document.querySelector(".popup > p").innerText = response.message)
+            .then(document.querySelector(".overlay").style.display = "block")
+            .then(document.querySelector(".popup").style.display = "block")
             .catch((error) => { console.log(error); })
     };
         
@@ -111,7 +116,7 @@ function ReserveTable(props) {
                         }
                         onSubmit={handleSubmit}
                         validationSchema={validation}>
-                        {({ errors, touched, setFieldValue }) => (
+                        {({ errors, touched, setFieldValue, values }) => (
                             <Form className="form reserve-table">
                                 <h2>Let us help you select a day</h2>
                                 <div className="flex-form date">
@@ -131,7 +136,6 @@ function ReserveTable(props) {
                                         <Field className="input hour" name="hour" component="select" value={hour} onChangeCapture={dropdownChange}>
                                             {times.map((time) => (
                                                 <option key={time.value} value={time.value}>{time.display}</option>
-
                                             ))}
                                         </Field>
                                         <div className="row minute">
@@ -146,14 +150,9 @@ function ReserveTable(props) {
                                         <span className="required-icon">*</span>
                                     </label>
                                     <Field className="input size" name="size" component="select">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
+                                        {parties.map((party) => (
+                                            <option key={party.value} value={party.value}>{party.value}</option>
+                                        ))}
                                     </Field>
                                     <span>Parties larger than 8 should call the restaurant.</span>
                                 </div>
@@ -188,17 +187,18 @@ function ReserveTable(props) {
                                         <label>Phone number
                                             <span className="required-icon">*</span>
                                         </label>
-                                        <Field className="input phone" name="phone" type="tel" placeholder="(123) 456-7890"/>
+                                        <Field className="input phone" name="phone" type="tel" placeholder="(123) 456-7890" onChange={(e) => { setFieldValue("phone", formatPhone(e)) }} />
                                         {errors.phone && touched.phone ? (
                                             <span className="error-message">{errors.phone}</span>
                                         ) : null}
                                     </div>
                                 </div>
                                 <label>
-                                    <input className="submit" type="submit" value="Reserve table" />
+                                    <button className="submit" type="submit">Reserve table</button>
                                 </label>
                             </Form>)}
                     </Formik>
+                    <FormModal message=""/>
                 </div>
             </main>
         </>

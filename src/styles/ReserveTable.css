@@ -35,15 +35,6 @@ div.form {
     border-width: 2px;
 }
 
-.minute, .submit {
-    display: block;
-    padding: 10px;
-    margin: 10px;
-    font-size: 1.5vw;
-    border-radius: 16px;
-    border-width: 1px;
-}
-
 .selected {
     background-color: #F4CE14;
 }
@@ -60,9 +51,25 @@ span {
     font-style: italic;
 }
 
-input.submit {
+button {
     padding: 5px;
     margin: 10px;
+    font-size: 1.5vw;
+    display: inline-block;
+    background-color: #495E57;
+    border-radius: 16px;
+    color: #FFFFFF;
+    border-width: 1px;
+}
+
+.close.button {
+    background-color: #FFF;
+    border-radius: 0px;
+    color: #495E57;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 95%;
 }
 
 
