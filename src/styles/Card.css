@@ -1,0 +1,12 @@
+.card {
+    display: flex;
+    background-color: var(--color-salmon);
+    width: calc(var(--width) / 5) !important;
+    padding: var(--padding);
+    margin: var(--margin);
+    border-radius: var(--size-font);
+}
+
+img {
+    width: var(--width);
+}
