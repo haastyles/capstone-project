@@ -1,89 +1,68 @@
-body {
-    color: #333;
-    font-family: 'Helvetica Neue LT Std';
-}
-
 .flex {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
+    justify-content: var(--content);
+    align-content: var(--content);
+    width: var(--width);
 }
 
 .flex div {
-    display: "block";
-    width: 50%;
+    display: block;
+    width: calc(var(--width) / 2);
 }
 
-.specials, .about  {
-    background-color: #FFDABB;
+.type1  {
+    background-color: var(--color-white);
 }
 
-.hero, .testimonials {
-    background-color: #FFF;
+.type2 {
+    background-color: var(--color-pink);
 }
 
 h1 {
-    display: "inline-block";
-    font-size: 4vw;
-    padding: 5px;
-    margin: 10px;
-    color: #495E57;
+    display: inline-block;
+    font-size: calc(var(--size-font) * 4);
+    padding: var(--padding);
+    margin: var(--margin);
+    color: var(--color-green);
 }
 
 h2 {
-    display: "inline-block";
-    font-size: 3vw;
-    padding: 5px;
-    margin: 10px;
+    display: inline-block;
+    font-size: calc(var(--size-font) * 3);
+    padding: var(--padding);
+    margin: var(--margin);
+}
+
+h3 {
+    font-size: calc(var(--size-font) * 2);
+    padding: var(--padding);
+    margin: var(--margin);
+}
+
+p {
+    font-size: var(--size-font);
+    padding: var(--padding);
+    margin: var(--margin);
 }
 
 .title-card {
-    height: 8vw;
+    height: calc(var(--size-font) * 8);
 }
+    .title-card h2 {
+        float: left;
+    }
 
-.title-card h2 {
-    float: left;
-}
-
-.flex div h3 {
-    font-size: 2vw;
-    padding: 5px;
-    margin: 10px;
-}
-
-.flex .info p {
-    font-size: 1vw;
-    padding: 5px;
-    margin: 10px;
-}
-
-.img-details {
-    border-radius: 16px;
-}
+    .title-card button, .image img {
+        float: right;
+    }
 
 .image img {
     display: block;
     position: relative;
-    float: right;
-    width: 50%;
-    padding: 5px;
-    margin: 10px;
+    width: calc(var(--width) / 2);
+    padding: var(--padding);
+    margin: var(--margin);
 }
 
-button {
-    padding: 5px;
-    margin: 10px;
-    font-size: 1.5vw;
-    display: inline-block;
-    background-color: #495E57;
-    border-radius: 16px;
-    color: #FFFFFF;
-}
-
-button > a {
-    color: #FFFFFF;
-    text-decoration: none;
-}

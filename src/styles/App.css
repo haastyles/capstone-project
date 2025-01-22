@@ -1,3 +1,37 @@
-.App {
-    text-align: center;
+:root {
+    --size-font: 1vw;
+    --color-font: #333;
+    --color-pink: #FFDABB;
+    --color-green: #495E57;
+    --color-white: #FFF;
+    --color-salmon: #EE9972;
+    --padding: 6px;
+    --margin: calc(var(--padding) * 2);
+    --content: center;
+    --width: 100%;
+}
+
+body {
+    color: var(--color-font);
+    font-family: 'Helvetica Neue LT Std';
+}
+
+button {
+    font-size: calc(var(--size-font) * 1.5);
+    padding: var(--padding);
+    margin: var(--margin);
+    display: inline-block;
+    background-color: var(--color-green);
+    border-radius: calc(var(--size-font) * 1.5);
+    border-width: 0px;
+    color: var(--color-white);
+}
+
+    button > a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+img {
+    border-radius: calc(var(--size-font));
 }

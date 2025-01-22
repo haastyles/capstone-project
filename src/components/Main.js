@@ -34,7 +34,7 @@ function Main() {
     return (
         <>
             <main>
-                <div className="flex hero">
+                <div className="flex type1 hero">
                     <div className="info hero">
                         <h1>Little Lemon</h1>
                         <h3>Chicago</h3>
@@ -46,10 +46,10 @@ function Main() {
                     </div>
 
                 </div>
-                <div className="bg-specials specials" style={{ display: "block"}}>
+                <div className="bg-specials type2 specials">
                     <div className="title-card specials">
                         <h2>Specials</h2>
-                        <button style={{ float: "right" }}>Online Menu</button>
+                        <button>Online Menu</button>
                     </div>
                     <div className="flex specials">
                         {dishes.map((dish) => (
@@ -64,7 +64,7 @@ function Main() {
                         ))}
                     </div>
                 </div>
-                <div className="bg-testimonials testimonials">
+                <div className="bg-testimonials type1 testimonials">
                     <div className="title-card testimonials">
                         <h2>Testimonials</h2>
                     </div>
@@ -74,14 +74,13 @@ function Main() {
                                     key={rate.title}
                                     title={rate.title}
                                     subTitle={rate.subTitle}
-                                    desc={rate.desc}                                    
-                                    style={{display: "block"}}
+                                    desc={rate.desc}
                                 />
                             ))}
                     </div>
                 </div>
                 <div>
-                    <div className="flex about">
+                    <div className="flex type2 about">
                         <div className="info about">
                             <h2>Little Lemon</h2>
                             <h3>Chicago</h3>
