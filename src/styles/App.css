@@ -5,25 +5,27 @@
     --color-green: #495E57;
     --color-white: #FFF;
     --color-salmon: #EE9972;
-    --padding: 6px;
+    --color-grey: #EDEFEE;
+    --padding: 1vw;
     --margin: calc(var(--padding) * 2);
-    --content: center;
+    --content: flex-start;
     --width: 100%;
+    --height: 100%
 }
 
-body {
+html {
     color: var(--color-font);
+    font-size: calc(var(--size-font) * 2);
     font-family: 'Helvetica Neue LT Std';
+    border-radius: var(--size-font);
+    height: var(--height);
 }
 
 button {
-    font-size: calc(var(--size-font) * 1.5);
-    padding: var(--padding);
-    margin: var(--margin);
+    font-size: calc(var(--size-font) * 3);
     display: inline-block;
     background-color: var(--color-green);
-    border-radius: calc(var(--size-font) * 1.5);
-    border-width: 0px;
+    border: none calc(var(--size-font) * 3);
     color: var(--color-white);
 }
 
@@ -33,5 +35,5 @@ button {
     }
 
 img {
-    border-radius: calc(var(--size-font));
+    border-radius: inherit;
 }

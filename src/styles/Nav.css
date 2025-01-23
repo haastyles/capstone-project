@@ -1,76 +1,57 @@
-body {
-    margin: 0;
-    padding: 0;
+nav {
+    height: calc(var(--size-font) * 6);
+    background-color: var(--color-grey);
+    color: var(--color-green);
+    position: relative;
+    width: 100%;
 }
+    nav .nav-container {
+        margin: 0 var(--margin);
+        padding: 0 var(--padding);
+        background-color: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--height);
+    }
 
-.nav-container {
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
-.logo img {
-    height: 80%;
+picture.logo img {
+    height: calc(var(--size-font) * 4);
 }
 
 .menu-icon {
     display: none;
 }
 
-.navbar {
-    height: 60px;
-    background-color: #EDEFEE;
-    color: #495E57;
-    position: relative;
-    width: 100%;
-}
-
-.nav-links {
-    padding: 5px;
-    margin: 10px;
-}
-
 ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
+    margin: var(--margin);
+    padding: var(--padding);
 }
 
     ul li {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding: var(--padding);
     }
 
         ul li a {
-            font-size: 2vw;
-            font-weight: 200;
             text-decoration: none;
-            color: #495E57;
+            color: inherit;
         }
 
             ul li a.active {
-                color: #495E57;
                 font-weight: 1000;
-                position: relative;
                 text-decoration: none;
             }
 
-ul li a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-}
-
 @media (max-width: 600px) {
-    .logo img {
-        height: 48px;
-        padding: 5px;
+    nav {
+        height: calc(var(--size-font) * 12);
+    }
+
+    picture.logo img {
+        height: calc(var(--size-font) * 10);
     }
 
     .menu-icon {
@@ -81,10 +62,10 @@ ul li a.active::after {
     .nav-links {
         position: absolute;
         right: 0;
-        top: 60px;
-        background-color: #EDEFEE;
+        top: calc(var(--size-font) * 12);
+        background-color: inherit;
         width: 0px;
-        height: calc(100vh + 200px);
+        height: 100vh;
         transition: all 0.3s ease-in;
         overflow: hidden;
         z-index: 100;
@@ -93,19 +74,18 @@ ul li a.active::after {
     }
 
         .nav-links.active {
-            width: 50%;
+            width: calc(var(--width) / 2.5);
         }
 
         .nav-links ul {
             display: flex;
             flex-direction: column;
         }
-
             .nav-links ul li {
-                margin-top: 20px;
+                margin-top: var(--margin);
             }
-
+                      
             ul li a {
-                font-size: 4vw;
+                font-size: calc(var(--size-font) * 4);
             }
 }

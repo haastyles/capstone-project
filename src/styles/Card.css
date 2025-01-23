@@ -1,7 +1,7 @@
 .card {
-    display: flex;
+    display: block;
+    flex: 0 0 12em;
     background-color: var(--color-salmon);
-    width: calc(var(--width) / 5) !important;
     padding: var(--padding);
     margin: var(--margin);
     border-radius: var(--size-font);
@@ -9,4 +9,9 @@
 
 img {
     width: var(--width);
+}
+
+h4, h5, p {
+    padding: calc(var(--padding) * 0.25) calc(var(--padding) * 0);
+    margin: calc(var(--margin) * 0.25) calc(var(--margin) * 0);
 }

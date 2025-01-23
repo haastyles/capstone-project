@@ -4,13 +4,12 @@
     flex-wrap: wrap;
     justify-content: var(--content);
     align-content: var(--content);
-    width: var(--width);
 }
 
-.flex div {
-    display: block;
-    width: calc(var(--width) / 2);
-}
+    .flex div {
+        display: block;
+        width: calc(var(--width) / 2.2)
+    }
 
 .type1  {
     background-color: var(--color-white);
@@ -20,35 +19,33 @@
     background-color: var(--color-pink);
 }
 
+.flex.specials, .flex-testimonials {
+    padding: var(--padding);
+    margin: var(--margin);
+}
+
 h1 {
     display: inline-block;
     font-size: calc(var(--size-font) * 4);
-    padding: var(--padding);
-    margin: var(--margin);
     color: var(--color-green);
 }
 
 h2 {
     display: inline-block;
     font-size: calc(var(--size-font) * 3);
-    padding: var(--padding);
-    margin: var(--margin);
 }
 
 h3 {
-    font-size: calc(var(--size-font) * 2);
-    padding: var(--padding);
-    margin: var(--margin);
+    font-size: calc(var(--size-font) * 2.5);
 }
 
 p {
-    font-size: var(--size-font);
-    padding: var(--padding);
-    margin: var(--margin);
+    font-size: calc(var(--size-font) * 2);
 }
 
 .title-card {
     height: calc(var(--size-font) * 8);
+
 }
     .title-card h2 {
         float: left;
@@ -58,6 +55,10 @@ p {
         float: right;
     }
 
+.info, .title-card {
+    padding: 0 var(--padding);
+    margin: 0 var(--margin);
+}
 .image img {
     display: block;
     position: relative;
@@ -65,4 +66,3 @@ p {
     padding: var(--padding);
     margin: var(--margin);
 }
-

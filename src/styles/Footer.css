@@ -1,28 +1,21 @@
 footer {
-    background-color: #EDEFEE;
-}
-
-.footer-logo {
-    width: 10%;
-    height: 90%;
-    padding: 5px;
-    margin: 10px;
+    background-color: var(--color-grey);
 }
 
 .footer-container {
     display: flex;
     flex-direction: row;
 }
+    .footer-container .footer-logo {
+        width: calc(var(--size-font) * 10);
+        padding: var(--padding);
+        margin: var(--margin);
+    }
 
-.footer-container ul {
-    display: block;
-}
-
-    .footer-container ul li {
-        padding: 0px;
-        margin: 0px;
+    .footer-container ul {
+        display: block;
     }
 
     .footer-container ul li a {
-        font-size: 2vw;
+        font-size: calc(var(--size-font) * 2);
     }
