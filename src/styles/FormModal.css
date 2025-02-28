@@ -1,0 +1,32 @@
+div.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--color-modal);
+    z-index: 999;
+}
+
+div.popup {
+    display: none;
+    position: fixed;
+    width: calc(var(--width) * 0.4);
+    top: calc(var(--width) * 0.4);
+    left: calc(var(--width) * 0.3);
+    padding: var(--padding);
+    border-radius: var(--size-font);
+    background-color: var(--color-white);
+    color: var(--color-green);
+    z-index: 1000;
+}
+
+    div.popup button.close {
+        background-color: var(--color-white);
+        color: var(--color-green);
+        border: calc(var(--size-font) * 0) none;
+        padding: calc(var(--padding) * 0);
+        margin: calc(var(--margin) * 0);
+        margin-left: calc(var(--width) * 0.95);
+    }

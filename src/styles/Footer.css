@@ -7,7 +7,8 @@ footer {
     flex-direction: row;
 }
     .footer-container .footer-logo {
-        width: calc(var(--size-font) * 10);
+        height: calc(var(--size-font) * 10);
+        width: calc(var(--size-font) * 5);
         padding: var(--padding);
         margin: var(--margin);
     }
@@ -16,6 +17,10 @@ footer {
         display: block;
     }
 
+    .footer-container ul li {
+        padding: 0;
+    }
+
     .footer-container ul li a {
-        font-size: calc(var(--size-font) * 2);
+        font-size: calc(var(--size-font) * 1);
     }

@@ -1,5 +1,5 @@
 import '../styles/ReserveTable.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import FormModal from './FormModal.js';
@@ -99,8 +99,8 @@ function ReserveTable(props) {
     return (
         <>
             <main>
-                <h1>Reserve a table</h1>
                 <div className="form-container">
+                    <h1>Reserve a table</h1>
                     <Formik
                         initialValues={
                             {

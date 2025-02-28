@@ -6,6 +6,8 @@
     --color-white: #FFF;
     --color-salmon: #EE9972;
     --color-grey: #EDEFEE;
+    --color-yellow: #F4CE14;
+    --color-modal: #00000080;
     --padding: 1vw;
     --margin: calc(var(--padding) * 2);
     --content: flex-start;
@@ -15,18 +17,21 @@
 
 html {
     color: var(--color-font);
-    font-size: calc(var(--size-font) * 2);
+    font-size: calc(var(--size-font) * 1.5);
     font-family: 'Helvetica Neue LT Std';
     border-radius: var(--size-font);
     height: var(--height);
 }
 
 button {
-    font-size: calc(var(--size-font) * 3);
+    font-size: calc(var(--size-font) * 2);
     display: inline-block;
     background-color: var(--color-green);
-    border: none calc(var(--size-font) * 3);
+    border: calc(var(--size-font) / 4) solid var(--color-grey);
     color: var(--color-white);
+    border-radius: var(--size-font);
+    padding: calc(var(--padding) / 2);
+    margin: calc(var(--margin) / 2);
 }
 
     button > a {
@@ -36,4 +41,24 @@ button {
 
 img {
     border-radius: inherit;
+}
+
+h1 {
+    display: inline-block;
+    font-size: calc(var(--size-font) * 3);
+    color: var(--color-green);
+}
+
+h2 {
+    display: inline-block;
+    font-size: calc(var(--size-font) * 2.5);
+}
+
+h3 {
+    font-size: calc(var(--size-font) * 2);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-green);
 }

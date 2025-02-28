@@ -1,42 +1,36 @@
 .form-container {
-    padding: 5px;
-    margin: 10px;
+    padding: var(--padding);
+    margin: var(--margin);
 }
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100%;
-}
-
-div.flex-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-div.form {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    margin: 10px;
-    width: 35%;
-    font-size: 1.75vw;
-}
+        form div.flex-form {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        form div.form {
+            display: flex;
+            flex-direction: column;
+            padding: var(--padding);
+            margin: var(--margin);
+            width: calc(var(--width) * 0.4);
+        }
 
 .input {
     display: block;
-    padding: 5px 0px 5px 0px;
-    margin: 10px 0px 10px 0px;
-    font-size: 2vw;
-    border-radius: 4px;
-    border-width: 2px;
+    padding: var(--padding) calc(var(--padding) * 0);
+    margin: var(--margin) calc(var(--margin) * 0);
+    font-size: inherit;
+    border-radius: var(--size-font);
+    border: calc(var(--size-font) / 4) solid var(--color-green);
 }
 
 .selected {
-    background-color: #F4CE14;
+    background-color: var(--color-yellow);
 }
 
 .row {
@@ -46,31 +40,6 @@ div.form {
 }
 
 span {
-    color: #EE9972;
-    font-size: 1.5vw;
+    color: var(--color-salmon);
     font-style: italic;
 }
-
-button {
-    padding: 5px;
-    margin: 10px;
-    font-size: 1.5vw;
-    display: inline-block;
-    background-color: #495E57;
-    border-radius: 16px;
-    color: #FFFFFF;
-    border-width: 1px;
-}
-
-.close.button {
-    background-color: #FFF;
-    border-radius: 0px;
-    color: #495E57;
-    border-width: 0px;
-    padding: 0px;
-    margin: 0px;
-    margin-left: 95%;
-}
-
-
-

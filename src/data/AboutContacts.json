@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Restaurant Number",
+    "description": "(123) 456-7890"
+  },
+  {
+    "id": "Catering",
+    "description": "catering@littlelemon.com"
+  },
+  {
+    "id": "Job Inquiry",
+    "description": "careers@littlelemon.com"
+  },
+  {
+    "id": "Email",
+    "description": "contactus@littlelemon.com"
+  }
+]

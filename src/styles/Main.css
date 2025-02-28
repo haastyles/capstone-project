@@ -24,25 +24,6 @@
     margin: var(--margin);
 }
 
-h1 {
-    display: inline-block;
-    font-size: calc(var(--size-font) * 4);
-    color: var(--color-green);
-}
-
-h2 {
-    display: inline-block;
-    font-size: calc(var(--size-font) * 3);
-}
-
-h3 {
-    font-size: calc(var(--size-font) * 2.5);
-}
-
-p {
-    font-size: calc(var(--size-font) * 2);
-}
-
 .title-card {
     height: calc(var(--size-font) * 8);
 
@@ -65,4 +46,22 @@ p {
     width: calc(var(--width) / 2);
     padding: var(--padding);
     margin: var(--margin);
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper {
+    align-items: center;
+}
+
+.react-horizontal-scrolling-menu--item {
+    min-width: calc(var(--height) / 3);
+}
+
+.react-horizontal-scrolling-menu--arrow-left,
+.react-horizontal-scrolling-menu--arrow-right {
+    display: block;
+    height: var(--height);
+}
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+    display: none;
 }

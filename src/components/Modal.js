@@ -1,7 +1,4 @@
-import useSubmit from '../hooks/useSubmit';
 function FormModal() {
-    //const { isLoading, response, submit } = useSubmit();
-
     return (
         <>
             <div className="popup hidden" display="block" style={{ flex: "0 0 20%", padding: "5px", margin: "10px", backgroundColor: "#EE9972", color: "#333333", alignContent: "center", justifyContent: "center", borderRadius: "16px" }}>
