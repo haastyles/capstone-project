@@ -3,7 +3,9 @@ import Header from './components/Header.jsx';
 import Main from './components/Main.js';
 import Footer from './components/Footer.jsx';
 import About from './components/About.js';
+import Menu from './components/Menu.js';
 import ReserveTable from './components/ReserveTable.js';
+import OrderOnline from './components/OrderOnline.js';
 import logo from './images/nav-logo.svg';
 import { Routes, Route } from 'react-router-dom';
 
@@ -23,10 +25,24 @@ function App() {
             <Footer />
         </>
 
+    const menu =
+        <>
+            <Header />
+            <Menu />
+            <Footer />
+        </>
+
     const reserve =
         <>
             <Header />
             <ReserveTable />
+            <Footer />
+        </>
+    
+    const order =
+        <>
+            <Header />
+            <OrderOnline />
             <Footer />
         </>
 
@@ -39,7 +55,9 @@ function App() {
           <Routes>
               <Route index element={home} />
               <Route path="/about" element={about} />
+              <Route path="/menu" element={menu} />
               <Route path="/reserve-a-table" element={reserve}/>
+              <Route path="/order" element={order}/>
           </Routes>
       </>
   );

@@ -12,6 +12,7 @@ function Arrow({
         <button
             disabled={disabled}
             onClick={onClick}
+            style={{opacity: disabled ? '0' : '1'}}
         >
             {children}
         </button>
@@ -19,13 +20,15 @@ function Arrow({
 }
 
 export function LeftArrow() {
-    const { isFirstItemVisible, scrollPrev } = React.useContext(VisibilityContext);
+    const visibility = React.useContext(VisibilityContext);
+    const isFirstItemVisible = visibility.useIsVisible('first', true);
+    const disabled = isFirstItemVisible;
 
     return (
         <Arrow
             type="button"
-            disabled={isFirstItemVisible}
-            onClick={() => scrollPrev()}
+            disabled={disabled}
+            onClick={() => { console.log({ isFirstItemVisible }); visibility.scrollPrev(); console.log({ isFirstItemVisible }); }}
             className="left"
         ><FontAwesomeIcon icon={faArrowLeft} />
         </Arrow>
@@ -33,13 +36,16 @@ export function LeftArrow() {
 }
 
 export function RightArrow() {
-    const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
+    const visibility = React.useContext(VisibilityContext);
+    const isLastItemVisible = visibility.useIsVisible('last', true);
+
+    const disabled = isLastItemVisible;
 
     return (
         <Arrow
             type="button"
-            disabled={isLastItemVisible}
-            onClick={() => scrollNext()}
+            disabled={disabled}
+            onClick={() => { console.log({ isLastItemVisible }); visibility.scrollNext(); console.log({ isLastItemVisible }); }}
             className="right"
         ><FontAwesomeIcon icon={faArrowRight}/>
         </Arrow>
