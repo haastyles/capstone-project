@@ -15,3 +15,18 @@ h4, h5, p {
     padding: calc(var(--padding) * 0.25) calc(var(--padding) * 0);
     margin: calc(var(--margin) * 0.25) calc(var(--margin) * 0);
 }
+
+.card.buttons {
+    text-align: center;
+}
+
+.card > button, .card > .counter {
+    display: inline-block;
+    width: calc(var(--width) / 4);
+}
+
+.card > .counter {
+    background-color: var(--color-white);
+    font-weight: 1000;
+    border-radius: var(--size-font);
+}

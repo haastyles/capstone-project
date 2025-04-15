@@ -1,24 +1,12 @@
-import '../styles/ReserveTable.css';
+import '../../styles/OrderOnline.css';
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import FormModal from './FormModal.js';
-import useSubmit from '../hooks/useSubmit';
-import times from "../data/ReserveTableTimes.json";
-import parties from "../data/ReserveTableParties.json";
-function ReserveTable(props) {
-    
-    const tomorrow = new Date();
-    const maxDate = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    maxDate.setDate(maxDate.getDate() + 121);
+import useSubmit from '../../hooks/useSubmit';
+import times from "../../data/ReserveTableTimes.json";
 
-    function getDate(inputDate) {
-        const month = inputDate.getMonth() + 1;
-        const year = inputDate.getFullYear();
-        const date = inputDate.getDate();
-        return `${month}/${date}/${year}`;
-    }
+function OrderOnline(props) {
+    
 
     const [hour, setHour] = useState(19);
     const [americanHour, setAmericanHour] = useState(7);
@@ -32,10 +20,6 @@ function ReserveTable(props) {
     const phoneDigits = /[^0-9]+/g;
    
     const validation = Yup.object().shape({
-        date: Yup.date()
-            .min(getDate(tomorrow), `Pick a date after ${getDate(tomorrow)}`)
-            .max(getDate(maxDate), `Pick a date before ${getDate(maxDate)}`)
-            .required("Required"),
         firstName: Yup.string()
             .matches(nameRegex, "Name must contain only letters")
             .required("Required"),
@@ -100,14 +84,15 @@ function ReserveTable(props) {
         <>
             <main>
                 <div className="form-container">
-                    <h1>Reserve a table</h1>
+                    <h1>Review Order</h1>
                     <Formik
                         initialValues={
                             {
-                                date: '',
                                 hour: 19,
                                 minute: 0,
-                                size: 2,
+                                itemCount: 2,
+                                items: '',
+                                price: 0.0,
                                 firstName: '',
                                 lastName: '',
                                 email: '',
@@ -117,44 +102,22 @@ function ReserveTable(props) {
                         onSubmit={handleSubmit}
                         validationSchema={validation}>
                         {({ errors, touched, setFieldValue, values }) => (
-                            <Form className="form reserve-table">
-                                <h2>Let us help you select a day</h2>
-                                <div className="flex-form date">
-                                    <div className="form date">
-                                        <label>Choose your date
-                                            <span className="required-icon">*</span>
-                                        </label>
-                                        <Field className="input date" name="date" type="date" />
-                                        {errors.date && touched.date ? (
-                                            <span className="error-message">{errors.date}</span>
-                                        ) : null}
-                                    </div>
-                                    <div className="form time">
-                                        <label>Choose your time
-                                            <span className="required-icon">*</span>
-                                        </label>
-                                        <Field className="input hour" name="hour" component="select" value={hour} onChangeCapture={dropdownChange}>
-                                            {times.map((time) => (
-                                                <option key={time.value} value={time.value}>{time.display}</option>
-                                            ))}
-                                        </Field>
-                                        <div className="row minute">
-                                            <Field className="input minute" name="minute" type="button" style={{ display: "none" }} />
-                                            <button className={`minute zero ${zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":00" + midday}</button>
-                                            <button className={`minute thirty ${!zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":30" + midday}</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="form size">
-                                    <label>Choose your party size
+                            <Form className="form order-online">
+                                <h2>Want to pick up today?</h2>
+                                <div className="form time">
+                                    <label>Choose your pickup time
                                         <span className="required-icon">*</span>
                                     </label>
-                                    <Field className="input size" name="size" component="select">
-                                        {parties.map((party) => (
-                                            <option key={party.value} value={party.value}>{party.value}</option>
+                                    <Field className="input hour" name="hour" component="select" value={hour} onChangeCapture={dropdownChange}>
+                                        {times.map((time) => (
+                                            <option key={time.value} value={time.value}>{time.display}</option>
                                         ))}
                                     </Field>
-                                    <span>Parties larger than 8 should call the restaurant.</span>
+                                    <div className="row minute">
+                                        <Field className="input minute" name="minute" type="button" style={{ display: "none" }} />
+                                        <button className={`minute zero ${zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":00" + midday}</button>
+                                        <button className={`minute thirty ${!zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":30" + midday}</button>
+                                    </div>
                                 </div>
                                 <h2>Contact information</h2>
                                 <div className="flex-form name">
@@ -194,15 +157,14 @@ function ReserveTable(props) {
                                     </div>
                                 </div>
                                 <label>
-                                    <button className="submit" type="submit">Reserve table</button>
+                                    <button className="submit" type="submit">Select menu items</button>
                                 </label>
                             </Form>)}
                     </Formik>
-                    <FormModal message=""/>
                 </div>
             </main>
         </>
     );
 }
 
-export default ReserveTable;
+export default OrderOnline;

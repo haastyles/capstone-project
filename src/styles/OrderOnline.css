@@ -15,13 +15,15 @@
         form div.form {
             display: flex;
             flex-direction: column;
+            padding: var(--padding);
+            margin: var(--margin);
             width: calc(var(--width) * 0.4);
         }
 
 .input {
     display: block;
-    padding: var(--padding);
-    margin: var(--margin);
+    padding: var(--padding) calc(var(--padding) * 0);
+    margin: var(--margin) calc(var(--margin) * 0);
     font-size: inherit;
     border-radius: var(--size-font);
     border: calc(var(--size-font) / 4) solid var(--color-green);

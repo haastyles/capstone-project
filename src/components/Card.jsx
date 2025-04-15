@@ -1,5 +1,6 @@
 import '../styles/Card.css';
-function Card({ title, subTitle, imgSrc, desc, altDesc }) {
+function Card({ title, subTitle, imgSrc, desc, altDesc, buttonOne, buttonTwo }) {
+
     return (
         <>
             <div className="card container">

@@ -135,7 +135,7 @@ function ReserveTable(props) {
                                         </label>
                                         <Field className="input hour" name="hour" component="select" value={hour} onChangeCapture={dropdownChange}>
                                             {times.map((time) => (
-                                                <option key={time.value} value={time.value}>{time.display}</option>
+                                                <option key={time.value} value={time.value}>{time.label}</option>
                                             ))}
                                         </Field>
                                         <div className="row minute">

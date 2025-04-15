@@ -8,7 +8,7 @@
     --color-grey: #EDEFEE;
     --color-yellow: #F4CE14;
     --color-modal: #00000080;
-    --padding: 1vw;
+    --padding: 0.5vw;
     --margin: calc(var(--padding) * 2);
     --content: flex-start;
     --width: 100%;

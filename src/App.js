@@ -5,7 +5,7 @@ import Footer from './components/Footer.jsx';
 import About from './components/About.js';
 import Menu from './components/Menu.js';
 import ReserveTable from './components/ReserveTable.js';
-import OrderOnline from './components/OrderOnline.js';
+import OrderOnline from './components/orderOnlineForm/OrderOnline.js';
 import logo from './images/nav-logo.svg';
 import { Routes, Route } from 'react-router-dom';
 
