@@ -1,8 +1,12 @@
-import '../styles/ReserveTable.css';
+import '../styles/Forms.css';
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
+import { Button } from '@mui/material';
 import * as Yup from 'yup';
 import FormModal from './FormModal.js';
+import DateFormField from './orderOnlineForm/formFields/DateFormField.jsx';
+import TextFormField from './orderOnlineForm/formFields/TextFormField.jsx';
+import SelectFormField from './orderOnlineForm/formFields/SelectFormField.jsx';
 import useSubmit from '../hooks/useSubmit';
 import times from "../data/ReserveTableTimes.json";
 import parties from "../data/ReserveTableParties.json";
@@ -25,6 +29,7 @@ function ReserveTable(props) {
     const [midday, setMidday] = useState("PM");
     const [minute, setMinute] = useState(0.5);
     const [zeroSelected, setZeroSelected] = useState(true);
+    const [ party, setParty ] = useState(2);
 
     const { isLoading, response, submit } = useSubmit();
     
@@ -66,6 +71,10 @@ function ReserveTable(props) {
         zeroSelected ? setZeroSelected(false) : setZeroSelected(true);
     }
 
+    const sizeChange = (e) => {
+        setParty(e.target.value);
+    }
+
     const formatPhone = (e) => {
         const userInput = e.target.value.replaceAll(phoneDigits, "");
         const first = userInput.slice(0, 3);
@@ -99,8 +108,8 @@ function ReserveTable(props) {
     return (
         <>
             <main>
+                <h1>Reserve a table</h1>
                 <div className="form-container">
-                    <h1>Reserve a table</h1>
                     <Formik
                         initialValues={
                             {
@@ -124,7 +133,7 @@ function ReserveTable(props) {
                                         <label>Choose your date
                                             <span className="required-icon">*</span>
                                         </label>
-                                        <Field className="input date" name="date" type="date" />
+                                        <DateFormField/>
                                         {errors.date && touched.date ? (
                                             <span className="error-message">{errors.date}</span>
                                         ) : null}
@@ -133,15 +142,38 @@ function ReserveTable(props) {
                                         <label>Choose your time
                                             <span className="required-icon">*</span>
                                         </label>
-                                        <Field className="input hour" name="hour" component="select" value={hour} onChangeCapture={dropdownChange}>
-                                            {times.map((time) => (
-                                                <option key={time.value} value={time.value}>{time.label}</option>
-                                            ))}
-                                        </Field>
+                                        <SelectFormField
+                                            className="input hour"
+                                            name="hour"
+                                            data={times}
+                                            dropdownValue={hour}
+                                            handleChange={dropdownChange}
+                                        />
                                         <div className="row minute">
-                                            <Field className="input minute" name="minute" type="button" style={{ display: "none" }} />
-                                            <button className={`minute zero ${zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":00" + midday}</button>
-                                            <button className={`minute thirty ${!zeroSelected ? "selected" : ""}`} onClick={(e) => { toggleChange(e); setFieldValue("minute", minute) }} type="button">{americanHour + ":30" + midday}</button>
+                                            <Field
+                                                className="input minute"
+                                                name="minute"
+                                                type="button"
+                                                style={{ display: "none" }}
+                                            />
+                                            <Button
+                                                className={`formButton minute zero ${zeroSelected ? "selected" : ""}`}
+                                                onClick={
+                                                    (e) => {
+                                                        toggleChange(e);
+                                                        setFieldValue("minute", minute);
+                                                    }
+                                                }
+                                            >{americanHour + ":00" + midday}</Button>
+                                            <Button
+                                                className={`formButton minute thirty ${!zeroSelected ? "selected" : ""}`}
+                                                onClick={
+                                                    (e) => {
+                                                        toggleChange(e);
+                                                        setFieldValue("minute", minute);
+                                                    }
+                                                }
+                                            >{americanHour + ":30" + midday}</Button>
                                         </div>
                                     </div>
                                 </div>
@@ -149,52 +181,53 @@ function ReserveTable(props) {
                                     <label>Choose your party size
                                         <span className="required-icon">*</span>
                                     </label>
-                                    <Field className="input size" name="size" component="select">
-                                        {parties.map((party) => (
-                                            <option key={party.value} value={party.value}>{party.value}</option>
-                                        ))}
-                                    </Field>
+                                    <SelectFormField
+                                        className="input size"
+                                        name="size"
+                                        data={parties}
+                                        dropdownValue={party}
+                                        handleChange={sizeChange}
+                                    />
                                     <span>Parties larger than 8 should call the restaurant.</span>
                                 </div>
                                 <h2>Contact information</h2>
                                 <div className="flex-form name">
                                     <div className="form firstName">
-                                        <label>First name
-                                            <span className="required-icon">*</span>
-                                        </label>
-                                        <Field className="input firstName" name="firstName" type="text" placeholder="First name"/>
-                                        {errors.firstName && touched.firstName ? (
-                                            <span className="error-message">{errors.firstName}</span>
-                                        ) : null}
+                                        <TextFormField
+                                            className="input firstName"
+                                            name="firstName"
+                                            label="First name"
+                                        />
                                     </div>
                                     <div className="form lastName">
-                                        <label>Last name</label>
-                                        <Field className="input lastName" name="lastName" type="text" placeholder="Last name"/>
-                                        {errors.lastName && touched.lastName ? (
-                                            <span className="error-message">{errors.lastName}</span>
-                                        ) : null}
+                                        <TextFormField
+                                            className="input lastName"
+                                            name="lastName"
+                                            label="Last name"
+                                        />
                                     </div>
                                 </div>
                                 <div className="flex-form contact">
                                     <div className="form email">
-                                        <label>Email address</label>
-                                        <Field className="input email" name="email" type="email" placeholder="youremail@email.com"/>
-                                        {errors.email && touched.email ? (
-                                            <span className="error-message">{errors.email}</span>
-                                        ) : null}
+                                        <TextFormField
+                                            className="input email"
+                                            name="email"
+                                            label="Email address"
+                                        />
                                     </div>
                                     <div className="form phone">
-                                        <label>Phone number
-                                            <span className="required-icon">*</span>
-                                        </label>
-                                        <Field className="input phone" name="phone" type="tel" placeholder="(123) 456-7890" onChange={(e) => { setFieldValue("phone", formatPhone(e)) }} />
-                                        {errors.phone && touched.phone ? (
-                                            <span className="error-message">{errors.phone}</span>
-                                        ) : null}
+                                        <TextFormField
+                                            className="input phone"
+                                            name="phone"
+                                            label="Phone number"
+                                        />
                                     </div>
                                 </div>
                                 <label>
-                                    <button className="submit" type="submit">Reserve table</button>
+                                    <Button
+                                        className="submit formButton"
+                                        type="submit"
+                                    >Reserve table</Button>
                                 </label>
                             </Form>)}
                     </Formik>

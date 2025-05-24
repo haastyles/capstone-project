@@ -1,5 +1,11 @@
 import '../styles/Card.css';
-function Card({ title, subTitle, imgSrc, desc, altDesc, buttonOne, buttonTwo }) {
+function Card({ 
+    title,
+    subTitle,
+    imgSrc,
+    desc,
+    altDesc
+}) {
 
     return (
         <>

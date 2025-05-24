@@ -1,0 +1,65 @@
+h1 {
+    padding: var(--padding);
+    margin: var(--margin);
+}
+
+.button-container {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--color-white);
+    width: var(--width);
+}
+
+.form-container .order-online .items, .form.reserve-table {
+    padding: var(--padding);
+    margin: var(--margin);
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+    form div.flex-form {
+        display: flex;
+        flex-direction: row;
+    }
+        
+        form div.form {
+            display: flex;
+            flex-direction: column;
+            padding: var(--padding);
+            margin: var(--margin);
+            width: calc(var(--width) * 0.4);
+        }
+
+.input, fieldset {
+    display: block;
+    padding: var(--padding) calc(var(--padding) * 0);
+    margin: var(--margin) calc(var(--margin) * 0);
+}
+
+.selected {
+    background-color: var(--color-yellow) !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+span.required-icon {
+    color: red;
+}
+
+button.formButton {
+    font-size: calc(var(--size-font) * 2);
+    display: inline-block;
+    background-color: var(--color-green);
+    border: calc(var(--size-font) / 4) solid var(--color-grey);
+    color: var(--color-white);
+    border-radius: var(--size-font);
+    padding: calc(var(--padding) / 2);
+    margin: calc(var(--margin) / 2);
+}

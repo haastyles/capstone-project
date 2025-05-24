@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { at } from 'lodash';
@@ -7,29 +6,16 @@ import {
   FormControl,
   Select,
   MenuItem,
-  FormHelperText,
-  ToggleButton,
-  ToggleButtonGroup
+  FormHelperText
 } from '@mui/material';
 
 function SelectField(props) {
   const { label, data, ...rest } = props;
   const [field, meta] = useField(props);
-  const { value: selectedValue } = field;
   const [touched, error] = at(meta, 'touched', 'error');
   const isError = touched && error && true;
-  const [dropdownValue, setDropdownValue] = useState(10);
-  const [toggleValue, setToggleValue] = useState(10);
-
-  const handleChange = (e) => {
-    setDropdownValue(e.target.value);
-    setToggleValue(e.target.value);
-  };
-
-  const toggleChange = (e, nextToggle) => {
-    setToggleValue(nextToggle);
-  };
-
+  
+  
   function _renderHelperText() {
     if (isError) {
       return <FormHelperText>{error}</FormHelperText>;
@@ -39,23 +25,20 @@ function SelectField(props) {
   return (
     <>
       <FormControl {...rest} error={isError}>
-        <Select {...field} onChange={handleChange} value={dropdownValue}>
+        <Select
+          {...field}
+          onChange={props.handleChange}
+          value={props.dropdownValue ? props.dropdownValue : null}>
           {data.map((item) => (
-            <MenuItem key={item.value} value={item.value}>
+            <MenuItem
+              key={item.value}
+              value={item.value}>
               {item.label}
             </MenuItem>
           ))}
         </Select>
         {_renderHelperText()}
       </FormControl>
-      <ToggleButtonGroup
-        value={toggleValue}
-        exclusive
-        onChange={toggleChange}
-      >
-        <ToggleButton value={dropdownValue}>{`${dropdownValue}:00`}</ToggleButton>
-        <ToggleButton value={dropdownValue+0.5}>{`${dropdownValue}:30`}</ToggleButton>
-      </ToggleButtonGroup>
     </>
     
   );

@@ -24,6 +24,10 @@ export default {
       phone: {
         name: 'phone',
         label: 'Phone number'
+      },
+      itemCount: {
+        name: 'itemCount',
+        label: 'Item count'
       }
     }
   };

@@ -1,11 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
 import { at } from 'lodash';
 import { useField } from 'formik';
 import { TextField } from '@mui/material';
 
 export default function InputField(props) {
-  const { errorText, ...rest } = props;
+  const { ...rest } = props;
   const [field, meta, helpers] = useField(props);
 
   const phoneDigits = /[^0-9]+/g;
@@ -41,7 +39,7 @@ export default function InputField(props) {
       {...rest}
       type="text"
       error={meta.touched && meta.error && true}
-      helperText={(_renderHelperText())}
+      helperText={_renderHelperText()}
       value={meta.value}
       onChange={(e) => {
         if (field.name == 'phone') {

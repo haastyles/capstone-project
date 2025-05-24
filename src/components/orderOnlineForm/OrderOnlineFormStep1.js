@@ -1,25 +1,23 @@
-import '../../styles/OrderOnline.css';
+import '../../styles/Forms.css';
 import TextFormField from './formFields/TextFormField';
 import SelectFormField from './formFields/SelectFormField';
-import times from "../../data/ReserveTableTimes.json";
 
-function OrderOnline(props) {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const currentTime = `${hours}:${minutes}:${seconds}`;
+function OrderOnline({
+    dropdownValue,
+    dropdownValues,
+    handleChange,
+    ...rest
+}) {
 
     const {
         formField: {
             hour,
-            minute,
             firstName,
             lastName,
             email,
             phone
         }
-    } = props;
+    } = rest;
         
     return (
         <>
@@ -30,7 +28,13 @@ function OrderOnline(props) {
                         <label>Choose your pickup time
                             <span className="required-icon">*</span>
                         </label>
-                        <SelectFormField name={hour.name} label={hour.label} data={times.filter((time)=>(`${time.universalValue}:00:00`>currentTime))}/>
+                        <SelectFormField
+                            name={hour.name}
+                            label={hour.label}
+                            data={dropdownValues}
+                            dropdownValue={dropdownValue}
+                            handleChange={handleChange}
+                        />
                     </div>
                     <h2>Contact information</h2>
                     <div className="flex-form name">

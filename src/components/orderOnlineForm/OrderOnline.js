@@ -1,20 +1,43 @@
-import '../../styles/OrderOnline.css';
-import { useState, useEffect } from 'react';
-import { Formik, Form, Field } from 'formik';
+import { useState } from 'react';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Button } from '@mui/material';
-import useSubmit from '../../hooks/useSubmit';
+import useSubmit from '../../hooks/useSubmit.js';
+import useCount from '../../hooks/useCount.js';
 import OrderStep1 from './OrderOnlineFormStep1.js';
 import OrderStep2 from './OrderOnlineFormStep2.js';
 import OrderStep3 from './OrderOnlineFormStep3.js';
 import formFieldModel from './formFields/formFieldModel.jsx';
+import times from "../../data/ReserveTableTimes.json";
 
-function OrderOnline(props) {
+function OrderOnline() {
 
     const { isLoading, response, submit } = useSubmit();
+    const { items, itemCounts, increment, decrement } = useCount();
     const nameRegex = /^[A-Za-z]*$/;
-    const phoneDigits = /[^0-9]+/g;
-    
+
+    //OrderOnlineFormStep1 constants for state
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const currentTime = `${hours}:${minutes}:${seconds}`;
+    const dropdownValues = times.filter(
+        (time)=>(`${time.value}:00:00`>currentTime)
+    ); 
+    const nextTime = times.filter(
+        (time) => (`${time.value}:00:00`>currentTime)
+    )[0].value ? times.filter(
+        (time) => (`${time.value}:00:00`>currentTime)
+    )[0].value : null;
+    const [dropdownValue, setDropdownValue] = useState(nextTime);
+
+    //OrderOnlineFormStep1 onChange function for state
+    const handleChange = (e) => {
+        const currentValue = e.target.value;
+        setDropdownValue(currentValue);
+    };
+
     const validation = [
         Yup.object().shape({
             firstName: Yup.string()
@@ -25,10 +48,11 @@ function OrderOnline(props) {
             email: Yup.string()
                 .email("Must be a valid email"),
             phone: Yup.string()
+                .length(14, "You need a real 10 digit phone number")
                 .required("Required")
         }),
         Yup.object().shape({
-            items: Yup.number()
+            itemCount: Yup.number()
                 .min(1, "You need to add an item to your cart")
                 .required("Required")
             
@@ -61,25 +85,32 @@ function OrderOnline(props) {
         }
     }
     
-    const handleBack = () => {
-        console.log(activeStep);
+    function _handleBack({values}) {
         setActiveStep(activeStep - 1);
+        console.log('Form back:', {values});
     }
-
-    useEffect(() => {console.log(activeStep);}, [activeStep]);
 
     function _renderStepContent(step) {
         switch (step) {
             case 1:
                 return (
                     <>
-                        <OrderStep1 formField={formField}/>
+                        <OrderStep1
+                            formField={formField}
+                            dropdownValues={dropdownValues}
+                            dropdownValue={dropdownValue}
+                            handleChange={handleChange}/>
                     </>
                 );
             case 2:
                 return (
                     <>
-                        <OrderStep2 formField={formField}/>
+                        <OrderStep2
+                            formField={formField}
+                            items={items}
+                            increment={increment}
+                            decrement={decrement}
+                            individualCount={itemCounts}/>
                     </>
                 );
             case 3:
@@ -115,7 +146,7 @@ function OrderOnline(props) {
                             lastName: '',
                             email: '',
                             phone: '',
-                            items: 0
+                            itemCount: 0
                         }
                     }
                     validationSchema={currentValidation}
@@ -124,10 +155,20 @@ function OrderOnline(props) {
                     {({ isSubmitting }) => (
                     <Form id={formId}>
                         {_renderStepContent(activeStep)}
-                        {activeStep !== 1 && (
-                            <Button className="back" variant="outlined" onClick={handleBack}>Back</Button>
-                        )}
-                        <Button type="submit" className="next" variant="outlined">{isLastStep ? "Place Order" : "Next"}</Button>
+                        <div className="button-container">
+                            {activeStep !== 1 && (
+                            <Button
+                                className="back formButton"
+                                variant="outlined"
+                                onClick={_handleBack}
+                            >Back</Button>
+                            )}
+                            <Button
+                                type="submit"
+                                className="next formButton"
+                                variant="outlined"
+                            >{isLastStep ? "Place Order" : "Next"}</Button>
+                        </div>
                     </Form>
                     )}
                 </Formik>
