@@ -1,6 +1,5 @@
 import '../../styles/Forms.css';
 import CounterFormField from './formFields/CounterFormField.jsx';
-import MenuItems from '../../data/MenuItems.js';
 import CardButtons from '../CardButtons.jsx';
 import { LeftArrow, RightArrow } from '../Arrows.jsx';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
@@ -11,13 +10,14 @@ function OrderOnline({
     individualCount,
     increment,
     decrement,
+    menuItems,
     ...rest
 }) {
     
-    const apps = MenuItems.filter((item) => item.type == 'appetizer');
-    const salads = MenuItems.filter((item) => item.type == 'salad');
-    const entrees = MenuItems.filter((item) => item.type == 'entree');
-    const desserts = MenuItems.filter((item) => item.type == 'dessert');
+    const apps = menuItems.filter((item) => item.type == 'appetizer');
+    const salads = menuItems.filter((item) => item.type == 'salad');
+    const entrees = menuItems.filter((item) => item.type == 'entree');
+    const desserts = menuItems.filter((item) => item.type == 'dessert');
 
     const {
         formField: {
@@ -29,6 +29,7 @@ function OrderOnline({
         <>
             <div className="form-container">
                 <div className="order-online">
+                    <h2>Add items to your cart</h2>
                     <div className="items">
                         <label>Here's your cart count
                             <span className="required-icon">*</span>
@@ -56,7 +57,7 @@ function OrderOnline({
                                     altDesc={dish.altDesc}
                                     increment={() => {increment(dish.key)}}
                                     decrement={() => {decrement(dish.key)}}
-                                    individualCount={individualCount[dish.key]}
+                                    individualCount={individualCount[dish.key].count}
                                 />
                             ))}
                         </ScrollMenu>
@@ -77,7 +78,7 @@ function OrderOnline({
                                     altDesc={dish.altDesc}
                                     increment={() => {increment(dish.key)}}
                                     decrement={() => {decrement(dish.key)}}
-                                    individualCount={individualCount[dish.key]}
+                                    individualCount={individualCount[dish.key].count}
                                 />                    
                             ))}
                         </ScrollMenu>
@@ -98,7 +99,7 @@ function OrderOnline({
                                     altDesc={dish.altDesc}
                                     increment={() => {increment(dish.key)}}
                                     decrement={() => {decrement(dish.key)}}
-                                    individualCount={individualCount[dish.key]}
+                                    individualCount={individualCount[dish.key].count}
                                 />                       
                             ))}
                         </ScrollMenu>
@@ -119,7 +120,7 @@ function OrderOnline({
                                     altDesc={dish.altDesc}
                                     increment={() => {increment(dish.key)}}
                                     decrement={() => {decrement(dish.key)}}
-                                    individualCount={individualCount[dish.key]}
+                                    individualCount={individualCount[dish.key].count}
                                 />                       
                             ))}
                         </ScrollMenu>

@@ -1,4 +1,4 @@
-h1 {
+h1, h2, h3, .order-online .items, .order-online .form, table {
     padding: var(--padding);
     margin: var(--margin);
 }
@@ -8,11 +8,7 @@ h1 {
     bottom: 0;
     background-color: var(--color-white);
     width: var(--width);
-}
-
-.form-container .order-online .items, .form.reserve-table {
-    padding: var(--padding);
-    margin: var(--margin);
+    z-index: 1000;
 }
 
 .form-container form {
@@ -49,12 +45,21 @@ h1 {
     justify-content: center;
 }
 
+.date-picker {
+    font-size: var(--size-font) !important;
+}
+
+.form > label {
+    padding: calc(var(--padding) / 2) 0;
+    margin: calc(var(--margin) / 2) 0;
+}
+
 span.required-icon {
     color: red;
 }
 
 button.formButton {
-    font-size: calc(var(--size-font) * 2);
+    font-size: calc(var(--size-font) * 1.5);
     display: inline-block;
     background-color: var(--color-green);
     border: calc(var(--size-font) / 4) solid var(--color-grey);

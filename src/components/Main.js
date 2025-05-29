@@ -15,9 +15,9 @@ function Main() {
     return (
         <>
             <main>
+                <h1>Little Lemon</h1>
                 <div className="flex type1 hero">
                     <div className="info hero">
-                        <h1>Little Lemon</h1>
                         <h3>Chicago</h3>
                         <p>{descriptions[0].description}</p>
                         <button><Link to="reserve-a-table">Reserve a Table</Link></button>
@@ -30,7 +30,7 @@ function Main() {
                 <div className="bg-specials type2 specials">
                     <div className="title-card specials">
                         <h2>Specials</h2>
-                        <button>Online Menu</button>
+                        <button><Link to="menu">View Menu</Link></button>
                     </div>
                     <ScrollMenu className="flex specials" LeftArrow={LeftArrow} RightArrow={RightArrow}>
                         {MainSpecials.map((dish) => (

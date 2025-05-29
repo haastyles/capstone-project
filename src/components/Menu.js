@@ -19,6 +19,7 @@ function Menu() {
     return (
         <>
             <main>
+                <h1>Menu</h1>
                 <div className="bg-apps type1 apps">
                     <div className="title-card apps">
                         <h2>Appetizers</h2>

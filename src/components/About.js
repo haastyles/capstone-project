@@ -23,9 +23,9 @@ function About() {
     return (
         <>
             <main>
+                <h1>Little Lemon</h1>
                 <div className="flex type1 hero">
                     <div className="info hero">
-                        <h1>Little Lemon</h1>
                         <h3>Chicago</h3>
                         <p>{descriptions[1].description}</p>
                     </div>

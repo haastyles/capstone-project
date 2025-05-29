@@ -8,7 +8,7 @@ function Footer() {
     
     const menuUpdates =
         menu.map(m =>
-            <li key={m.id}><a href='#'>{m.title}</a></li>
+            <li key={m.id}><a href={m.path}>{m.title}</a></li>
         );
     const contactUpdates =
         contact.map(c =>

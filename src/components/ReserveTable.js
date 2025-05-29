@@ -133,7 +133,7 @@ function ReserveTable(props) {
                                         <label>Choose your date
                                             <span className="required-icon">*</span>
                                         </label>
-                                        <DateFormField/>
+                                        <DateFormField className="date-picker"/>
                                         {errors.date && touched.date ? (
                                             <span className="error-message">{errors.date}</span>
                                         ) : null}
@@ -193,6 +193,9 @@ function ReserveTable(props) {
                                 <h2>Contact information</h2>
                                 <div className="flex-form name">
                                     <div className="form firstName">
+                                        <label>First name
+                                            <span className="required-icon">*</span>
+                                        </label>
                                         <TextFormField
                                             className="input firstName"
                                             name="firstName"
@@ -200,6 +203,7 @@ function ReserveTable(props) {
                                         />
                                     </div>
                                     <div className="form lastName">
+                                        <label>Last name</label>
                                         <TextFormField
                                             className="input lastName"
                                             name="lastName"
@@ -209,6 +213,7 @@ function ReserveTable(props) {
                                 </div>
                                 <div className="flex-form contact">
                                     <div className="form email">
+                                        <label>Email address</label>
                                         <TextFormField
                                             className="input email"
                                             name="email"
@@ -216,6 +221,9 @@ function ReserveTable(props) {
                                         />
                                     </div>
                                     <div className="form phone">
+                                        <label>Phone number
+                                            <span className="required-icon">*</span>
+                                        </label>
                                         <TextFormField
                                             className="input phone"
                                             name="phone"
@@ -223,12 +231,12 @@ function ReserveTable(props) {
                                         />
                                     </div>
                                 </div>
-                                <label>
+                                <div className="button-container">
                                     <Button
                                         className="submit formButton"
                                         type="submit"
                                     >Reserve table</Button>
-                                </label>
+                                </div>
                             </Form>)}
                     </Formik>
                     <FormModal message=""/>

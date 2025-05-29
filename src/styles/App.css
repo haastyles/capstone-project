@@ -17,14 +17,14 @@
 
 html {
     color: var(--color-font);
-    font-size: calc(var(--size-font) * 1.5);
+    font-size: var(--size-font);
     font-family: 'Helvetica Neue LT Std';
     border-radius: var(--size-font);
     height: var(--height);
 }
 
 button {
-    font-size: calc(var(--size-font) * 2);
+    font-size: calc(var(--size-font) * 1.5);
     display: inline-block;
     background-color: var(--color-green);
     border: calc(var(--size-font) / 4) solid var(--color-grey);
@@ -45,17 +45,17 @@ img {
 
 h1 {
     display: inline-block;
-    font-size: calc(var(--size-font) * 3);
+    font-size: calc(var(--size-font) * 2.5);
     color: var(--color-green);
 }
 
 h2 {
     display: inline-block;
-    font-size: calc(var(--size-font) * 2.5);
+    font-size: calc(var(--size-font) * 2);
 }
 
 h3 {
-    font-size: calc(var(--size-font) * 2);
+    font-size: calc(var(--size-font) * 1.5);
 }
 
 a {

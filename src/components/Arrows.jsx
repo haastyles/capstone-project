@@ -28,7 +28,7 @@ export function LeftArrow() {
         <Arrow
             type="button"
             disabled={disabled}
-            onClick={() => { console.log({ isFirstItemVisible }); visibility.scrollPrev(); console.log({ isFirstItemVisible }); }}
+            onClick={() => { visibility.scrollPrev(); }}
             className="left"
         ><FontAwesomeIcon icon={faArrowLeft} />
         </Arrow>
@@ -45,7 +45,7 @@ export function RightArrow() {
         <Arrow
             type="button"
             disabled={disabled}
-            onClick={() => { console.log({ isLastItemVisible }); visibility.scrollNext(); console.log({ isLastItemVisible }); }}
+            onClick={() => { visibility.scrollNext(); }}
             className="right"
         ><FontAwesomeIcon icon={faArrowRight}/>
         </Arrow>

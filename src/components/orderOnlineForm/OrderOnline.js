@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Button } from '@mui/material';
 import useSubmit from '../../hooks/useSubmit.js';
@@ -9,11 +9,12 @@ import OrderStep2 from './OrderOnlineFormStep2.js';
 import OrderStep3 from './OrderOnlineFormStep3.js';
 import formFieldModel from './formFields/formFieldModel.jsx';
 import times from "../../data/ReserveTableTimes.json";
+import MenuItems from '../../data/MenuItems.js';
 
-function OrderOnline() {
+function OrderOnline(props) {
 
     const { isLoading, response, submit } = useSubmit();
-    const { items, itemCounts, increment, decrement } = useCount();
+    const { items, itemCounts, increment, decrement } = useCount(MenuItems);
     const nameRegex = /^[A-Za-z]*$/;
 
     //OrderOnlineFormStep1 constants for state
@@ -110,13 +111,15 @@ function OrderOnline() {
                             items={items}
                             increment={increment}
                             decrement={decrement}
-                            individualCount={itemCounts}/>
+                            individualCount={itemCounts}
+                            menuItems={MenuItems}/>
                     </>
                 );
             case 3:
                 return (
                     <>
-                        <OrderStep3/>
+                        <OrderStep3
+                            individualCount={itemCounts}/>
                     </>
                 );
             default:

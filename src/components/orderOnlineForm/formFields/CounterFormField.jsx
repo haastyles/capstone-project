@@ -1,5 +1,5 @@
 import { at } from 'lodash';
-import { useField, Field } from 'formik';
+import { useField } from 'formik';
 import { TextField } from '@mui/material';
 
 export default function CountField(props) {
@@ -12,7 +12,7 @@ export default function CountField(props) {
       return error;
     }
   }
-
+  console.log('counter', meta)
   return (
     <TextField
       {...field}

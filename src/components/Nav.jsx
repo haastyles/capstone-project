@@ -38,7 +38,6 @@ function Nav() {
                         <li><NavLink to="/menu" className='nav-link'>menu</NavLink></li>
                         <li><NavLink to="/reserve-a-table" className='nav-link'>reservations</NavLink></li>
                         <li><NavLink to="/order" className='nav-link'>order online</NavLink></li>
-                        <li><NavLink to="/login" className='nav-link'>login</NavLink></li>
                     </ul>
                 </div>
             </div>

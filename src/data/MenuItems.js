@@ -6,6 +6,7 @@ const MenuItems = [
         desc: 'A delicious blend of vegetables, feta, and herbs.',
         altDesc: 'Greek salad',
         type: 'salad',
+        price: 22,
         key: 1
     },
     {
@@ -15,6 +16,7 @@ const MenuItems = [
         desc: 'Light, cripsy bread topped with a flavorful blend of tomatoes and basil.',
         altDesc: 'Plate of bruchetta',
         type: 'appetizer',
+        price: 15,
         key: 2
     },
     {
@@ -24,6 +26,7 @@ const MenuItems = [
         desc: 'Roasted fig topped with whipped goat cheese and a hint of honey.',
         altDesc: 'Plate of figs and goat cheese',
         type: 'appetizer',
+        price: 12,
         key: 3
     },
     {
@@ -33,6 +36,7 @@ const MenuItems = [
         desc: 'Various vegetables enriched with delicious herbs, feta, and hummus.',
         altDesc: 'Vegetable and couscous bowl',
         type: 'entree',
+        price: 24,
         key: 4
     },
     {
@@ -42,6 +46,7 @@ const MenuItems = [
         desc: 'A greek classic with shaved lamb, fresh onions and greens, and topped with whipped feta.',
         altDesc: 'Plate of bruchetta',
         type: 'entree',
+        price: 28,
         key: 5
     },
     {
@@ -51,6 +56,7 @@ const MenuItems = [
         desc: 'An airy cake with a hint of zest.',
         altDesc: 'Plate of lemon cake',
         type: 'dessert',
+        price: 12,
         key: 6
     },
     {
@@ -60,6 +66,7 @@ const MenuItems = [
         desc: 'Light and flakely philo dough fried with pistachios and honey. Stuffed with homemade vanilla ice cream.',
         altDesc: 'Plate of baklava',
         type: 'dessert',
+        price: 16,
         key: 7
     },
     {
@@ -69,6 +76,7 @@ const MenuItems = [
         desc: 'Fresh cucumbers, tomatoes, olives, and roasted red peppers mixed with feta cheese and penne pasta. Topped with a housemade balsamic dressing.',
         altDesc: 'Bowl of Greek pasta salad',
         type: 'salad',
+        price: 18,
         key: 8
     },
     {
@@ -78,6 +86,7 @@ const MenuItems = [
         desc: 'Fresh salmon filet marinaded in citrus-based sauce, and plated with roasted chickpeas and zucchini.',
         altDesc: 'Plate salmon and vegetables',
         type: 'entree',
+        price: 25,
         key: 9
     },
     {
@@ -87,6 +96,7 @@ const MenuItems = [
         desc: 'A classic Greek comfort food of steak filet pie with a rich, mashed potato topping.',
         altDesc: 'Plate steak and mashed potato moussaka',
         type: 'entree',
+        price: 28,
         key: 10
     },
     {
@@ -96,6 +106,7 @@ const MenuItems = [
         desc: 'Striped bass lightly roasted and served whole over a bed of couscous.',
         altDesc: 'Plate of two whole roasted fish',
         type: 'entree',
+        price: 29,
         key: 11
     },
     {
@@ -105,6 +116,7 @@ const MenuItems = [
         desc: 'A twist on the classic charcuterie board. Fresh, fried potato balls, pita, pitted olives, and hummus to share.',
         altDesc: 'Plate of various pitas, olives, and fried potato balls',
         type: 'appetizer',
+        price: 21,
         key: 12
     },
     {
@@ -114,6 +126,7 @@ const MenuItems = [
         desc: 'Light chicken breast skews marginated in lemon juice and served with fresh vegetables.',
         altDesc: 'Plate chicken kabobs with lemon and vegetables',
         type: 'entree',
+        price: 22,
         key: 13
     },
     {
@@ -123,6 +136,7 @@ const MenuItems = [
         desc: 'Mashed chickpeas and herbs lightly breaded in a pistachio crust and pan-fried.',
         altDesc: 'Plate of falafel balls',
         type: 'appetizer',
+        price: 16,
         key: 14
     },
     {
@@ -132,6 +146,7 @@ const MenuItems = [
         desc: 'Orzo in a housemade, tomato, basil sauce. Topped with feta and served warm.',
         altDesc: 'Bowl of tomato orzo and feta',
         type: 'entree',
+        price: 18,
         key: 15
     },
     {
@@ -141,6 +156,7 @@ const MenuItems = [
         desc: 'Fresh blend of chickpeas, red onion, and herbs in a light vinegarette.',
         altDesc: 'Bowl of chickpeas',
         type: 'salad',
+        price: 13,
         key: 16
     },
     {
@@ -150,6 +166,7 @@ const MenuItems = [
         desc: 'A light, no-bake chocolate biscuit cake.',
         altDesc: 'Plate of chocolate cake',
         type: 'dessert',
+        price: 12,
         key: 17
     }
 ];
