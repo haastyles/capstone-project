@@ -2,7 +2,7 @@ import { at } from 'lodash';
 import { useField } from 'formik';
 import { TextField } from '@mui/material';
 
-export default function InputField(props) {
+function InputField(props) {
   const { ...rest } = props;
   const [field, meta, helpers] = useField(props);
 
@@ -52,3 +52,5 @@ export default function InputField(props) {
     />
   );
 }
+
+export default InputField;

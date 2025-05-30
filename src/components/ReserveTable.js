@@ -10,7 +10,8 @@ import SelectFormField from './orderOnlineForm/formFields/SelectFormField.jsx';
 import useSubmit from '../hooks/useSubmit';
 import times from "../data/ReserveTableTimes.json";
 import parties from "../data/ReserveTableParties.json";
-function ReserveTable(props) {
+
+function ReserveTable() {
     
     const tomorrow = new Date();
     const maxDate = new Date();
@@ -34,7 +35,6 @@ function ReserveTable(props) {
     const { isLoading, response, submit } = useSubmit();
     
     const nameRegex = /^[A-Za-z]*$/;
-    const phoneDigits = /[^0-9]+/g;
    
     const validation = Yup.object().shape({
         date: Yup.date()
@@ -73,24 +73,6 @@ function ReserveTable(props) {
 
     const sizeChange = (e) => {
         setParty(e.target.value);
-    }
-
-    const formatPhone = (e) => {
-        const userInput = e.target.value.replaceAll(phoneDigits, "");
-        const first = userInput.slice(0, 3);
-        const second = userInput.slice(3, 6);
-        const third = userInput.slice(6, 10);
-        let formatted = "";
-
-        if (third.length > 0) {
-            formatted = "(" + first + ") " + second + "-" + third;
-        } else if (second.length > 0) {
-            formatted = "(" + first + ") " + second;
-        } else if (first.length > 0) {
-            formatted = "(" + first;
-        }
- 
-        return formatted;
     }
 
     const handleSubmit = (values, { resetForm }) => {
@@ -134,9 +116,6 @@ function ReserveTable(props) {
                                             <span className="required-icon">*</span>
                                         </label>
                                         <DateFormField className="date-picker"/>
-                                        {errors.date && touched.date ? (
-                                            <span className="error-message">{errors.date}</span>
-                                        ) : null}
                                     </div>
                                     <div className="form time">
                                         <label>Choose your time

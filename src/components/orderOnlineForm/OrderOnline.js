@@ -11,8 +11,7 @@ import formFieldModel from './formFields/formFieldModel.jsx';
 import times from "../../data/ReserveTableTimes.json";
 import MenuItems from '../../data/MenuItems.js';
 
-function OrderOnline(props) {
-
+function OrderOnline() {
     const { isLoading, response, submit } = useSubmit();
     const { items, itemCounts, increment, decrement } = useCount(MenuItems);
     const nameRegex = /^[A-Za-z]*$/;
@@ -65,6 +64,17 @@ function OrderOnline(props) {
     const [activeStep, setActiveStep] = useState(1);
     const isLastStep = activeStep === steps.length;
     const currentValidation = validation[activeStep - 1];
+    const formik = useFormik({
+        initialValues: {
+            hour: 19,
+            minute: 0,
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            itemCount: 0
+        }
+    });
         
     const submitForm = (values, { resetForm }) => {
         submit([], values)
@@ -119,7 +129,8 @@ function OrderOnline(props) {
                 return (
                     <>
                         <OrderStep3
-                            individualCount={itemCounts}/>
+                            individualCount={itemCounts}
+                            itemCountTotal={items}/>
                     </>
                 );
             default:
@@ -141,17 +152,7 @@ function OrderOnline(props) {
                 <h1>Order Online</h1>
                 <Stepper/>
                 <Formik
-                    initialValues={
-                        {
-                            hour: 19,
-                            minute: 0,
-                            firstName: '',
-                            lastName: '',
-                            email: '',
-                            phone: '',
-                            itemCount: 0
-                        }
-                    }
+                    initialValues={formik.initialValues}
                     validationSchema={currentValidation}
                     onSubmit={_handleSubmit}
                 >

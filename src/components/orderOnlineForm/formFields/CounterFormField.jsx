@@ -12,7 +12,7 @@ export default function CountField(props) {
       return error;
     }
   }
-  console.log('counter', meta)
+
   return (
     <TextField
       {...field}

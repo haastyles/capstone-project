@@ -3,6 +3,7 @@ import CounterFormField from './formFields/CounterFormField.jsx';
 import CardButtons from '../CardButtons.jsx';
 import { LeftArrow, RightArrow } from '../Arrows.jsx';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
+import { useFormikContext } from 'formik';
 
 
 function OrderOnline({
@@ -18,6 +19,7 @@ function OrderOnline({
     const salads = menuItems.filter((item) => item.type == 'salad');
     const entrees = menuItems.filter((item) => item.type == 'entree');
     const desserts = menuItems.filter((item) => item.type == 'dessert');
+    const { setFieldValue } = useFormikContext(); 
 
     const {
         formField: {
@@ -55,8 +57,14 @@ function OrderOnline({
                                     desc={dish.desc}
                                     imgSrc={dish.getImgSrc()}
                                     altDesc={dish.altDesc}
-                                    increment={() => {increment(dish.key)}}
-                                    decrement={() => {decrement(dish.key)}}
+                                    increment={() => {
+                                        increment(dish.key);
+                                        setFieldValue(itemCount.name, items + 1)
+                                    }}
+                                    decrement={() => {
+                                        decrement(dish.key);
+                                        setFieldValue(itemCount.name, individualCount[dish.key].count > 0 ? items - 1 : items)
+                                    }}
                                     individualCount={individualCount[dish.key].count}
                                 />
                             ))}
@@ -76,8 +84,14 @@ function OrderOnline({
                                     desc={dish.desc}
                                     imgSrc={dish.getImgSrc()}
                                     altDesc={dish.altDesc}
-                                    increment={() => {increment(dish.key)}}
-                                    decrement={() => {decrement(dish.key)}}
+                                    increment={() => {
+                                        increment(dish.key);
+                                        setFieldValue(itemCount.name, items + 1)
+                                    }}
+                                    decrement={() => {
+                                        decrement(dish.key);
+                                        setFieldValue(itemCount.name, individualCount[dish.key].count > 0 ? items - 1 : items)
+                                    }}
                                     individualCount={individualCount[dish.key].count}
                                 />                    
                             ))}
@@ -97,8 +111,14 @@ function OrderOnline({
                                     desc={dish.desc}
                                     imgSrc={dish.getImgSrc()}
                                     altDesc={dish.altDesc}
-                                    increment={() => {increment(dish.key)}}
-                                    decrement={() => {decrement(dish.key)}}
+                                    increment={() => {
+                                        increment(dish.key);
+                                        setFieldValue(itemCount.name, items + 1)
+                                    }}
+                                    decrement={() => {
+                                        decrement(dish.key);
+                                        setFieldValue(itemCount.name, individualCount[dish.key].count > 0 ? items - 1 : items)
+                                    }}
                                     individualCount={individualCount[dish.key].count}
                                 />                       
                             ))}
@@ -118,8 +138,14 @@ function OrderOnline({
                                     desc={dish.desc}
                                     imgSrc={dish.getImgSrc()}
                                     altDesc={dish.altDesc}
-                                    increment={() => {increment(dish.key)}}
-                                    decrement={() => {decrement(dish.key)}}
+                                    increment={() => {
+                                        increment(dish.key);
+                                        setFieldValue(itemCount.name, items + 1)
+                                    }}
+                                    decrement={() => {
+                                        decrement(dish.key);
+                                        setFieldValue(itemCount.name, individualCount[dish.key].count > 0 ? items - 1 : items)
+                                    }}
                                     individualCount={individualCount[dish.key].count}
                                 />                       
                             ))}
