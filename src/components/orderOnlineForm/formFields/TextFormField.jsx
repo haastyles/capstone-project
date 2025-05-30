@@ -1,10 +1,11 @@
 import { at } from 'lodash';
-import { useField } from 'formik';
+import { useField, useFormikContext } from 'formik';
 import { TextField } from '@mui/material';
 
 function InputField(props) {
   const { ...rest } = props;
   const [field, meta, helpers] = useField(props);
+  const { setFieldValue } = useFormikContext();
 
   const phoneDigits = /[^0-9]+/g;
 
@@ -44,8 +45,10 @@ function InputField(props) {
       onChange={(e) => {
         if (field.name == 'phone') {
           helpers.setValue(formatPhone(e));
+          setFieldValue(field.name, formatPhone(e));
         } else {
           helpers.setValue(e.target.value);
+          setFieldValue(field.name, e.target.value);
         }
       }
       }

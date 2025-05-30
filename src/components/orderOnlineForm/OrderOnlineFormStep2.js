@@ -19,7 +19,7 @@ function OrderOnline({
     const salads = menuItems.filter((item) => item.type == 'salad');
     const entrees = menuItems.filter((item) => item.type == 'entree');
     const desserts = menuItems.filter((item) => item.type == 'dessert');
-    const { setFieldValue } = useFormikContext(); 
+    const { setFieldValue } = useFormikContext();
 
     const {
         formField: {

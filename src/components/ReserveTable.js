@@ -31,7 +31,6 @@ function ReserveTable() {
     const [minute, setMinute] = useState(0.5);
     const [zeroSelected, setZeroSelected] = useState(true);
     const [ party, setParty ] = useState(2);
-
     const { isLoading, response, submit } = useSubmit();
     
     const nameRegex = /^[A-Za-z]*$/;
@@ -52,27 +51,9 @@ function ReserveTable() {
             .required("Required")
     });
 
-    const dropdownChange = (e) => {
-        setHour(e.target.value);
-        if (e.target.value == 11) {
-            setAmericanHour(e.target.value);
-            setMidday("AM");
-        } else if (e.target.value == 12) {
-            setAmericanHour(e.target.value);
-            setMidday("PM");
-        } else {
-            setMidday("PM");
-            setAmericanHour(e.target.value - 12);
-        }
-    }
-
     const toggleChange = (e) => {
         zeroSelected ? setMinute(0) : setMinute(0.5);
         zeroSelected ? setZeroSelected(false) : setZeroSelected(true);
-    }
-
-    const sizeChange = (e) => {
-        setParty(e.target.value);
     }
 
     const handleSubmit = (values, { resetForm }) => {
@@ -107,7 +88,7 @@ function ReserveTable() {
                         }
                         onSubmit={handleSubmit}
                         validationSchema={validation}>
-                        {({ errors, touched, setFieldValue, values }) => (
+                        {({ setFieldValue, values }) => (
                             <Form className="form reserve-table">
                                 <h2>Let us help you select a day</h2>
                                 <div className="flex-form date">
@@ -126,7 +107,22 @@ function ReserveTable() {
                                             name="hour"
                                             data={times}
                                             dropdownValue={hour}
-                                            handleChange={dropdownChange}
+                                            handleChange={
+                                                (e) => {
+                                                    setHour(e.target.value);
+                                                    if (e.target.value == 11) {
+                                                        setAmericanHour(e.target.value);
+                                                        setMidday("AM");
+                                                    } else if (e.target.value == 12) {
+                                                        setAmericanHour(e.target.value);
+                                                        setMidday("PM");
+                                                    } else {
+                                                        setMidday("PM");
+                                                        setAmericanHour(e.target.value - 12);
+                                                    }
+                                                    setFieldValue("hour", e.target.value);
+                                                }
+                                            }
                                         />
                                         <div className="row minute">
                                             <Field
@@ -165,7 +161,12 @@ function ReserveTable() {
                                         name="size"
                                         data={parties}
                                         dropdownValue={party}
-                                        handleChange={sizeChange}
+                                        handleChange={
+                                            (e) => {
+                                            setParty(e.target.value);
+                                            setFieldValue("size", e.target.value)
+                                            }
+                                        }
                                     />
                                     <span>Parties larger than 8 should call the restaurant.</span>
                                 </div>
