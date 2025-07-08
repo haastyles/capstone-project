@@ -32,8 +32,6 @@ function OrderOnline({
                             name={hour.name}
                             label={hour.label}
                             data={dropdownValues}
-                            dropdownValue={dropdownValue}
-                            handleChange={handleChange}
                         />
                     </div>
                     <h2>Contact information</h2>

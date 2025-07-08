@@ -1,25 +1,24 @@
 import {useState} from "react";
 
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const submit = async (url, data) => {
+  const submit = async (data) => {
     setLoading(true);
     try {
-      await wait(2000);
-      setResponse({
-        type: 'success',
-        message: `Your reservation has been made, ${data.firstName}, we can't wait to see you soon!`,
-      })
+      setTimeout(() => {
+        setResponse({
+          message: `Your reservation has been made, ${data.firstName}, we can't wait to see you soon!`,
+          type: 'success'
+        });
+        setLoading(false);
+      }, 2000);
     } catch (error) {
       setResponse({
-        type: 'error',
         message: 'Something went wrong, please try again later!',
-      })
-    } finally {
+        type: 'error'
+      });
       setLoading(false);
     }
   };

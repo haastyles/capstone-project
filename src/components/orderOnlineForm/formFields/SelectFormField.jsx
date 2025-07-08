@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { at } from 'lodash';
-import { useField } from 'formik';
+import { useField, useFormikContext } from 'formik';
 import {
   FormControl,
   Select,
@@ -11,6 +11,7 @@ import {
 function SelectField(props) {
   const { label, data, ...rest } = props;
   const [field, meta] = useField(props);
+  const { setFieldValue } = useFormikContext();
   const [touched, error] = at(meta, 'touched', 'error');
   const isError = touched && error && true;
   
@@ -25,9 +26,12 @@ function SelectField(props) {
     <>
       <FormControl {...rest} error={isError}>
         <Select
-          {...field}
-          onChange={props.handleChange}
-          value={props.dropdownValue ? props.dropdownValue : null}>
+          name={field.name}
+          onChange={(e) => {
+            setFieldValue(field.name, e.target.value);
+          }}
+          onBlur={field.onBlur}
+          value={field.value || ''}>
           {data.map((item) => (
             <MenuItem
               key={item.value}

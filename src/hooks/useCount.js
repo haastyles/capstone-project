@@ -1,9 +1,7 @@
 import {useState} from "react";
 
 const useCount = (details) => {
-  const [items, setItems] = useState(0);
-  const [ itemCounts, setItemCounts ] = useState(
-    {
+  const itemDefault = {
       1: {
         count: 0,
         item: {}
@@ -72,8 +70,9 @@ const useCount = (details) => {
         count: 0,
         item: {}
       }
-    }
-  );
+  }; 
+  const [items, setItems] = useState(0);
+  const [ itemCounts, setItemCounts ] = useState(itemDefault);
 
   const increment = (i) => {
     setItems(items + 1);
@@ -103,7 +102,12 @@ const useCount = (details) => {
     }
   };
 
-  return { items, itemCounts, increment, decrement };
+  const reset = () => {
+    setItems(0);
+    setItemCounts(itemDefault);
+  };
+
+  return { items, itemCounts, increment, decrement, reset };
 }
 
 export default useCount;

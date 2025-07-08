@@ -34,6 +34,16 @@ function ReserveTable() {
     const { isLoading, response, submit } = useSubmit();
     
     const nameRegex = /^[A-Za-z]*$/;
+    const initialValues = {
+        date: getDate(tomorrow),
+        hour: hour,
+        minute: minute,
+        size: party,
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: ''
+    }
    
     const validation = Yup.object().shape({
         date: Yup.date()
@@ -48,6 +58,7 @@ function ReserveTable() {
         email: Yup.string()
             .email("Must be a valid email"),
         phone: Yup.string()
+            .length(14, "You need a real 10 digit phone number")
             .required("Required")
     });
 
@@ -57,14 +68,18 @@ function ReserveTable() {
     }
 
     const handleSubmit = (values, { resetForm }) => {
-        submit([], values)
+        submit(values)
             .then(console.log(isLoading))
-            .then(console.log(response))
             .then(console.log(response.type === 'success'))
-            .then(() => { if (response.type === 'success') { console.log('Form submitted:', values); resetForm({ values: '' }); } })
-            .then(document.querySelector(".popup > p").innerText = response.message)
+            .then(() => {
+                if (response.type === 'success') {
+                    console.log('Form submitted:', values);
+                    resetForm({ values: initialValues });
+                }
+            })
             .then(document.querySelector(".overlay").style.display = "block")
             .then(document.querySelector(".popup").style.display = "block")
+            .then(document.querySelector(".popup > p").innerText = response.message)
             .catch((error) => { console.log(error); })
     };
         
@@ -74,18 +89,7 @@ function ReserveTable() {
                 <h1>Reserve a table</h1>
                 <div className="form-container">
                     <Formik
-                        initialValues={
-                            {
-                                date: '',
-                                hour: 19,
-                                minute: 0,
-                                size: 2,
-                                firstName: '',
-                                lastName: '',
-                                email: '',
-                                phone: ''
-                            }
-                        }
+                        initialValues={initialValues}
                         onSubmit={handleSubmit}
                         validationSchema={validation}>
                         {({ setFieldValue, values }) => (

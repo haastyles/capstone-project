@@ -1,9 +1,11 @@
 import '../styles/FormModal.css';
-function FormModal({ message }) {
+function FormModal({ message, onClose }) {
     const closeModal = () => {
         document.querySelector(".popup").style.display = "none";
-        document.querySelector(".overlay").style.display = "none"
-
+        document.querySelector(".overlay").style.display = "none";
+        if (onClose) {
+            onClose();
+        }
     }
      return (
         <>
