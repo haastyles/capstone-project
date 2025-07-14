@@ -3,9 +3,7 @@ import TextFormField from './formFields/TextFormField';
 import SelectFormField from './formFields/SelectFormField';
 
 function OrderOnline({
-    dropdownValue,
     dropdownValues,
-    handleChange,
     ...rest
 }) {
 

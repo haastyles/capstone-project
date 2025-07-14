@@ -1,5 +1,5 @@
 import '../styles/Forms.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { Button } from '@mui/material';
 import * as Yup from 'yup';
@@ -25,13 +25,26 @@ function ReserveTable() {
         return `${month}/${date}/${year}`;
     }
 
-    const [hour, setHour] = useState(19);
-    const [americanHour, setAmericanHour] = useState(7);
-    const [midday, setMidday] = useState("PM");
+    const hour = 19;
     const [minute, setMinute] = useState(0.5);
     const [zeroSelected, setZeroSelected] = useState(true);
-    const [ party, setParty ] = useState(2);
-    const { isLoading, response, submit } = useSubmit();
+    const party = 2;
+    const [showModal, setShowModal] = useState(false);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+    const { isLoading, response, submit, reset: resetSubmit } = useSubmit('reservation has been made');
+
+    // Watch for response changes to show modal
+    useEffect(() => {
+        if (hasSubmitted && response && response.type === 'success') {
+            setHasSubmitted(false);
+            setShowModal(true);
+            
+            // Clear the response after a delay to prevent showing stale data
+            setTimeout(() => {
+                resetSubmit();
+            }, 3000);
+        }
+    }, [response, hasSubmitted, resetSubmit]);
     
     const nameRegex = /^[A-Za-z]*$/;
     const initialValues = {
@@ -62,25 +75,18 @@ function ReserveTable() {
             .required("Required")
     });
 
-    const toggleChange = (e) => {
-        zeroSelected ? setMinute(0) : setMinute(0.5);
-        zeroSelected ? setZeroSelected(false) : setZeroSelected(true);
-    }
-
     const handleSubmit = (values, { resetForm }) => {
-        submit(values)
-            .then(console.log(isLoading))
-            .then(console.log(response.type === 'success'))
-            .then(() => {
-                if (response.type === 'success') {
-                    console.log('Form submitted:', values);
-                    resetForm({ values: initialValues });
-                }
-            })
-            .then(document.querySelector(".overlay").style.display = "block")
-            .then(document.querySelector(".popup").style.display = "block")
-            .then(document.querySelector(".popup > p").innerText = response.message)
-            .catch((error) => { console.log(error); })
+        try {
+            console.log('Submitting reservation values:', values);
+            setHasSubmitted(true);
+            resetSubmit(); // Clear any previous response
+            submit(values);
+            console.log('Reservation submit called');
+            resetForm({ values: initialValues });
+        } catch (error) {
+            console.log('Error submitting reservation:', error);
+            setHasSubmitted(false);
+        }
     };
         
     return (
@@ -92,7 +98,23 @@ function ReserveTable() {
                         initialValues={initialValues}
                         onSubmit={handleSubmit}
                         validationSchema={validation}>
-                        {({ setFieldValue, values }) => (
+                        {({ setFieldValue, values }) => {
+                            // Calculate time display based on current form values
+                            const currentHour = values.hour || hour;
+                            let displayHour, displayMidday;
+                            
+                            if (currentHour == 11) {
+                                displayHour = currentHour;
+                                displayMidday = "AM";
+                            } else if (currentHour == 12) {
+                                displayHour = currentHour;
+                                displayMidday = "PM";
+                            } else {
+                                displayMidday = "PM";
+                                displayHour = currentHour - 12;
+                            }
+
+                            return (
                             <Form className="form reserve-table">
                                 <h2>Let us help you select a day</h2>
                                 <div className="flex-form date">
@@ -110,23 +132,6 @@ function ReserveTable() {
                                             className="input hour"
                                             name="hour"
                                             data={times}
-                                            dropdownValue={hour}
-                                            handleChange={
-                                                (e) => {
-                                                    setHour(e.target.value);
-                                                    if (e.target.value == 11) {
-                                                        setAmericanHour(e.target.value);
-                                                        setMidday("AM");
-                                                    } else if (e.target.value == 12) {
-                                                        setAmericanHour(e.target.value);
-                                                        setMidday("PM");
-                                                    } else {
-                                                        setMidday("PM");
-                                                        setAmericanHour(e.target.value - 12);
-                                                    }
-                                                    setFieldValue("hour", e.target.value);
-                                                }
-                                            }
                                         />
                                         <div className="row minute">
                                             <Field
@@ -139,20 +144,24 @@ function ReserveTable() {
                                                 className={`formButton minute zero ${zeroSelected ? "selected" : ""}`}
                                                 onClick={
                                                     (e) => {
-                                                        toggleChange(e);
-                                                        setFieldValue("minute", minute);
+                                                        e.preventDefault();
+                                                        setMinute(0);
+                                                        setZeroSelected(true);
+                                                        setFieldValue("minute", 0);
                                                     }
                                                 }
-                                            >{americanHour + ":00" + midday}</Button>
+                                            >{displayHour}:00 {displayMidday}</Button>
                                             <Button
                                                 className={`formButton minute thirty ${!zeroSelected ? "selected" : ""}`}
                                                 onClick={
                                                     (e) => {
-                                                        toggleChange(e);
-                                                        setFieldValue("minute", minute);
+                                                        e.preventDefault();
+                                                        setMinute(0.5);
+                                                        setZeroSelected(false);
+                                                        setFieldValue("minute", 0.5);
                                                     }
                                                 }
-                                            >{americanHour + ":30" + midday}</Button>
+                                            >{displayHour}:30 {displayMidday}</Button>
                                         </div>
                                     </div>
                                 </div>
@@ -164,13 +173,6 @@ function ReserveTable() {
                                         className="input size"
                                         name="size"
                                         data={parties}
-                                        dropdownValue={party}
-                                        handleChange={
-                                            (e) => {
-                                            setParty(e.target.value);
-                                            setFieldValue("size", e.target.value)
-                                            }
-                                        }
                                     />
                                     <span>Parties larger than 8 should call the restaurant.</span>
                                 </div>
@@ -221,9 +223,15 @@ function ReserveTable() {
                                         type="submit"
                                     >Reserve table</Button>
                                 </div>
-                            </Form>)}
+                            </Form>
+                            );
+                        }}
                     </Formik>
-                    <FormModal message=""/>
+                    <FormModal 
+                        message={response?.message || "Your reservation has been confirmed!"} 
+                        onClose={() => setShowModal(false)}
+                        show={showModal}
+                    />
                 </div>
             </main>
         </>

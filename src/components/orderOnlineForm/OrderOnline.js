@@ -13,21 +13,26 @@ import times from "../../data/ReserveTableTimes.json";
 import MenuItems from '../../data/MenuItems.js';
 
 function OrderOnline() {
-    const { isLoading, response, submit } = useSubmit();
+    const { isLoading, response, submit, reset: resetSubmit } = useSubmit('order has been placed');
     const { items, itemCounts, increment, decrement, reset } = useCount(MenuItems);
     const nameRegex = /^[A-Za-z]*$/;
     const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const setFieldValueRef = useRef(null);
 
     useEffect(() => {
         if (hasSubmitted && response && response.type === 'success') {
             setHasSubmitted(false);
             setActiveStep(1);
-            document.querySelector(".overlay").style.display = "block";
-            document.querySelector(".popup").style.display = "block";
-            document.querySelector(".popup > p").innerText = response.message;
+            setShowModal(true);
+            
+            // Clear the response after a delay to prevent showing stale data
+            setTimeout(() => {
+                resetSubmit();
+                setShowModal(false);
+            }, 3000);
         }
-    }, [response, hasSubmitted]);
+    }, [response, hasSubmitted, resetSubmit]);
 
     useEffect(() => {
         if (setFieldValueRef.current) {
@@ -37,10 +42,7 @@ function OrderOnline() {
 
     //OrderOnlineFormStep1 constants for state
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const currentTime = `${hours}:${minutes}:${seconds}`;
+    const currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
     const dropdownValues = times.filter(
         (time)=>(`${time.value}:00:00`>currentTime)
     ); 
@@ -94,16 +96,16 @@ function OrderOnline() {
         })
     ];
 
-    const steps = ['Contact info', 'Menu items', 'Review your order'];
     const { formId, formField } = formFieldModel;
     const [activeStep, setActiveStep] = useState(1);
-    const isLastStep = activeStep === steps.length;
+    const isLastStep = activeStep === 3;
     const currentValidation = validation[activeStep - 1];
         
     const submitForm = async (values, { resetForm }) => {
         try {
             console.log('Submitting form values:', values);
             setHasSubmitted(true);
+            resetSubmit(); // Clear any previous response
             submit(values);
             console.log('Form submit called');
             resetForm();
@@ -231,7 +233,11 @@ function OrderOnline() {
                         );
                     }}
                 </Formik>
-                <FormModal message=""/>
+                <FormModal 
+                    message={response?.message || "Your order has been placed!"} 
+                    onClose={() => setShowModal(false)}
+                    show={showModal}
+                />
             </main>
         </>
     )

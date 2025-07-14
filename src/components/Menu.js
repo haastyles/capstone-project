@@ -1,13 +1,9 @@
 import Card from './Card.jsx';
 import { LeftArrow, RightArrow } from './Arrows.jsx';
-import restaurant from '../images/restaurant.jpg';
-import owners from '../images/Mario and Adrian A.jpg';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css';
 import '../styles/Main.css';
 import { Link } from 'react-router-dom';
-import ratings from "../data/MainRatings.json";
-import descriptions from "../data/MainDescriptions.json";
 import MenuItems from '../data/MenuItems.js';
 function Menu() {
 

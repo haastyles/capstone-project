@@ -4,8 +4,7 @@ function Header() {
 
     return (
         <header>
-            <Nav>
-            </Nav>
+            <Nav/>
         </header>
     );
 }
