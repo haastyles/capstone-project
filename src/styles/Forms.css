@@ -11,6 +11,36 @@ h1, h2, h3, .order-online .items, .order-online .form, table {
     z-index: 999;
 }
 
+.steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: var(--margin);
+
+    .step, .step-divider {
+        background-color: var(--color-grey);
+        text-align: center;
+        font-size: calc(var(--size-font) * 1.5);
+    }
+
+    .step {
+        padding: calc(var(--padding) * 2) calc(var(--padding) * 2);
+        width: calc(var(--size-font) * 2);
+        height: calc(var(--size-font) * 2);
+        border-radius: 100%;
+    }
+
+    .step-divider {
+        width: calc(var(--size-font) * 8);
+        height: var(--size-font);
+    }
+
+    .step.active, .step-divider.active {
+        background-color: var(--color-yellow);
+    }
+}
+
 .form-container form {
     display: flex;
     flex-direction: column;

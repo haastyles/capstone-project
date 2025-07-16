@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Button } from '@mui/material';
+import Stepper from '../Stepper.jsx';
 import useSubmit from '../../hooks/useSubmit.js';
 import useCount from '../../hooks/useCount.js';
 import OrderStep1 from './OrderOnlineFormStep1.js';
@@ -177,21 +178,13 @@ function OrderOnline() {
         }
     }
 
-    function Stepper () {
-        return (
-            <div className="flex items-center">
-                <div className="rounded-full bg-blue-500 w-6 h-6"></div>
-                <span className="h-1 w-8 bg-blue-500"></span>
-            </div>
-        );
-    }
         
 
     return(
         <>
             <main>
                 <h1>Order Online</h1>
-                <Stepper/>
+                <Stepper activeStep={activeStep}/>
                 <Formik
                     key="order-form" 
                     initialValues={{
